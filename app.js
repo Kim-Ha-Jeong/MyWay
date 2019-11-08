@@ -8,19 +8,9 @@ var client = mysql.createConnection({
   user: 'root',
   password: 'pearflower2019',
   database: 'pearflower'
+  port:3306
 });
 */
-
-/*여기부터 새로 작성*/
-
-
-var client = mysql.createConnection({
-    host: "pearflower2019.cbyhsdhnditm.ap-northeast-2.rds.amazonaws.com",
-    user: "root",
-    database: "pearflower",
-    password: "pearflower2019",
-    port: 3306
-});
 
 
 /*여기까지 새로 작성*/
