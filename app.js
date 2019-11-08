@@ -1,6 +1,5 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var mysql = require('mysql');
 var express = require('express');
 var bodyParser = require('body-parser');
 /*
@@ -8,19 +7,9 @@ var client = mysql.createConnection({
   user: 'root',
   password: 'pearflower2019',
   database: 'pearflower'
+  port : 3306
 });
 */
-
-/*여기부터 새로 작성*/
-
-
-var client = mysql.createConnection({
-    host: "pearflower2019.cbyhsdhnditm.ap-northeast-2.rds.amazonaws.com",
-    user: "root",
-    database: "pearflower",
-    password: "pearflower2019",
-    port: 3306
-});
 
 
 /*여기까지 새로 작성*/
@@ -39,7 +28,7 @@ app.use(express.static('js'));
 
 //호스팅 할 때는 포트넘버 80 고정
 app.listen(3000, function () {
-  console.log('server running at localhost:1886');
+  console.log('server running at localhost:3000');
 });
 
 //홈
@@ -48,4 +37,3 @@ app.get('/', function (request, response) {
       response.send(data);
   });
 });
-
