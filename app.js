@@ -28,7 +28,7 @@ app.use(express.static('js'));
 
 //호스팅 할 때는 포트넘버 80 고정
 app.listen(3000, function () {
-  console.log('server running at localhost:1886');
+  console.log('server running at localhost:3000');
 });
 
 //홈
