@@ -1,6 +1,5 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var mysql = require('mysql');
 var express = require('express');
 var bodyParser = require('body-parser');
 /*
@@ -8,7 +7,7 @@ var client = mysql.createConnection({
   user: 'root',
   password: 'pearflower2019',
   database: 'pearflower'
-  port:3306
+  port : 3306
 });
 */
 
@@ -38,4 +37,3 @@ app.get('/', function (request, response) {
       response.send(data);
   });
 });
-
