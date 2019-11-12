@@ -1,0 +1,21 @@
+body{
+    background-color : #FCF9E6;
+}
+
+#main-contain{
+    margin-top: 5%;
+    max-width : 1400px;
+}
+
+.card{
+    margin : 2%;
+    border-radius : 2em;
+}
+
+.like{
+    font-weight : bold;
+}
+
+img{
+    width : 100%;
+}
