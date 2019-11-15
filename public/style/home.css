@@ -31,12 +31,13 @@ body{
     margin-top : 10%;
     font-size : 1.12rem;
     color : #00A3FE;
+    font-family: 'Nanum-B';
 }
 
 .card-title{
     font-size : 0.9rem;
     margin-bottom:2%;
-
+    font-family: 'Nanum-B';
 }
 
 .card{
@@ -51,6 +52,7 @@ body{
 }
 .card-text{
     margin-bottom:2%;
+    font-family: 'Nanum-R';
 }
 
 p{
@@ -67,6 +69,7 @@ p{
 p.like{
     margin-bottom : 0;
     text-align : right;
+    font-family: 'Nanum-R';
 }
 
 .like{
