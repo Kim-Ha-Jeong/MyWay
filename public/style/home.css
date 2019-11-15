@@ -8,7 +8,9 @@ body{
 #main-contain{
     margin-top: 5%;
     width : 80%;
-    margin-top: 11%
+    margin-top: 11%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .title{
