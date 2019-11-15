@@ -9,7 +9,10 @@ body{
 
 .card{
     margin : 2%;
-    border-radius : 2em;
+    width: 100%;
+}
+p.like{
+    margin-bottom : 0;
 }
 
 .like{
