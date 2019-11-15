@@ -22,8 +22,8 @@ body{
 #main-contain{
     width : 80%;
     margin-top: 11%;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -90,3 +90,9 @@ a{
     padding-left: 3%;
 
 }
+
+.button{
+    margin-bottom : 5%;
+    width : 133.8%;
+}
+
