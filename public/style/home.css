@@ -1,23 +1,22 @@
 @font-face { 
     font-family: 'Nanum-B'; 
-    src: url('font/NanumSquareB.ttf'); 
+    src: url('/font/NanumSquareB.ttf'); 
 }
 @font-face { 
     font-family: 'Nanum-EB'; 
-    src: url('font/NanumSquareEB.ttf'); 
+    src: url('/font/NanumSquareEB.ttf'); 
 }
 @font-face { 
     font-family: 'Nanum-L'; 
-    src: url('font/NanumSquareL.ttf'); 
+    src: url('/font/NanumSquareL.ttf'); 
 }
 @font-face { 
     font-family: 'Nanum-R'; 
-    src: url('font/NanumSquareR.ttf'); 
+    src: url('/font/NanumSquareR.ttf'); 
 }
 
 body{
     background-color : #FCF9E6;
-    font-family : 'Nanum-R';
 }
 
 #main-contain{
