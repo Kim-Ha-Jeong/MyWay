@@ -38,6 +38,7 @@ body{
     font-size : 0.9rem;
     margin-bottom:2%;
     font-family: 'Nanum-B';
+    color : #727171;
 }
 
 .card{
@@ -53,6 +54,7 @@ body{
 .card-text{
     margin-bottom:2%;
     font-family: 'Nanum-R';
+    color : #929292;
 }
 
 p{
@@ -70,10 +72,8 @@ p.like{
     margin-bottom : 0;
     text-align : right;
     font-family: 'Nanum-R';
-}
-
-.like{
     font-weight : bold;
+    color : #727171;
 }
 
 img{
