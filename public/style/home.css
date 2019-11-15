@@ -16,6 +16,7 @@ body{
 .card-title{
     font-size : 0.9rem;
     margin-bottom:2%;
+
 }
 
 .card{
@@ -30,6 +31,14 @@ body{
 }
 .card-text{
     margin-bottom:2%;
+}
+
+p{
+    font-size : 0.7rem;
+}
+
+.card-body{
+    padding : 0.6rem;
 }
 
 p{
@@ -54,9 +63,10 @@ img{
 }
 
 #searchbutton{
-    width: 80%;
+  width: 80%;
 }
 
 a{
     padding-left: 3%;
+
 }
