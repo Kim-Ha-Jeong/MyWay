@@ -4,12 +4,24 @@ body{
 
 #main-contain{
     margin-top: 5%;
-    max-width : 1400px;
+    width : 80%;
+}
+
+.card-title{
+    font-size : 1rem;
 }
 
 .card{
     margin : 2%;
     width: 100%;
+}
+
+.card-body{
+    padding : 0.6rem;
+}
+
+p{
+    font-size : 0.7rem;
 }
 p.like{
     margin-bottom : 0;
@@ -23,3 +35,11 @@ img{
     width : 100%;
 }
 
+#logo{
+    width : 70%;
+    margin-left:15%;   
+}
+
+#searchbutton{
+    width: 10%;
+}
