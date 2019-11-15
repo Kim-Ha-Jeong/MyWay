@@ -4,15 +4,49 @@ body{
 
 #main-contain{
     margin-top: 5%;
-    max-width : 1400px;
+    width : 80%;
+}
+
+.title{
+    margin-top : 10%;
+    font-size : 1.12rem;
+    color : #00A3FE;
+}
+
+.card-title{
+    font-size : 0.9rem;
+    margin-bottom:2%;
+
 }
 
 .card{
-    margin : 2%;
+    margin : 1.5%;
     width: 100%;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+.card-body{
+    padding : 0.6rem;
+}
+.card-text{
+    margin-bottom:2%;
+}
+
+p{
+    font-size : 0.7rem;
+}
+
+.card-body{
+    padding : 0.6rem;
+}
+
+p{
+    font-size : 0.7rem;
 }
 p.like{
     margin-bottom : 0;
+    text-align : right;
 }
 
 .like{
@@ -23,3 +57,16 @@ img{
     width : 100%;
 }
 
+#logo{
+    width : 70%;
+    margin-left:15%;   
+}
+
+#searchbutton{
+  width: 80%;
+}
+
+a{
+    padding-left: 3%;
+
+}
