@@ -22,8 +22,8 @@ body{
 #main-contain{
     width : 80%;
     margin-top: 11%;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -89,4 +89,9 @@ img{
 a{
     padding-left: 3%;
 
+}
+
+#buttons{
+    padding : 0;
+    margin : 0;
 }
