@@ -32,6 +32,7 @@
     <style type="text/css">.fancybox-margin{margin-right:0px;}</style>
     <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
     <body>
       <div class="container" id="main-contain">
@@ -5055,9 +5056,47 @@
       </div>
       <script>
         var scale = 2.6;
-        $('#a').mousemove(function(){
-            $('#a').css('transform','scale('+scale+')')
+        $('#a').on('mousewheel',function(event){
+            var x = (event.originalEvent.wheelDelta);
+            console.log(x);
+            if(x>0){
+                $('#a').css('transform','scale('+scale+')')
+                scale += 0.4;
+            } else if(x < 0){
+                $('#a').css('transform','scale('+scale+')')
+                scale -= 0.4;
+            }
         })
+      </script>
+      <script>
+      $(function() {
+        var o = $('#a');
+        var sx, sy, dx, dy, ix, iy;
+        var dragging = false;
+        $('#a').on('mousedown', function(e) {
+          e.preventDefault();
+          sx = e.pageX;
+          sy = e.pageY;
+          ix = $(o).offset().left;
+          iy = $(o).offset().top;
+          dx=dy=0;
+          dragging = true;
+          console.log("mousedown - s:",sx,sy,"/i:",ix,iy);
+        }).on('mousemove', function(e) {
+          if(dragging) {
+            dx = e.pageX - sx;
+            dy = e.pageY - sy;
+            $(o).offset({left: ix + dx, top: iy + dy});
+            $(debug).text(dx + "," + dy);
+          }
+        }).on('mouseup', function(e){
+          dx = e.pageX - sx;
+          dy = e.pageY - sy;
+          $(o).offset({left: ix + dx, top: iy + dy});
+          dragging = false;
+          console.log("mouseup - d:",dx,dy,"/i:",ix,iy);
+        });
+      });
       </script>
     </body>
 </html>
