@@ -1,3 +1,4 @@
+/* 폰트 적용 */
 @font-face { 
     font-family: 'Nanum-B'; 
     src: url('/font/NanumSquareB.ttf'); 
@@ -14,19 +15,40 @@
     font-family: 'Nanum-R'; 
     src: url('/font/NanumSquareR.ttf'); 
 }
-
+/* 페이지 공통 */
 body{
     background-color : #FCF9E6;
 }
 
+img{
+    width : 100%;
+}
+
+/* 로고 */
+#logo{
+    width : 70%;
+    margin-left:15%;   
+}
+
+/* 전체 요소 틀 */
 #main-contain{
     width : 80%;
-    margin-top: 11%;
+    margin-top: 7%;
     margin-right: auto;
     margin-left: auto;
 }
 
+/* searchbutton관련 */
+#searchbutton{
+    width: 80%;
+}
 
+a{
+      padding-left: 3%;
+  
+}
+
+/* 제목 */
 .title{
     margin-top : 10%;
     font-size : 1.12rem;
@@ -34,13 +56,7 @@ body{
     font-family: 'Nanum-B';
 }
 
-.card-title{
-    font-size : 0.9rem;
-    margin-bottom:2%;
-    font-family: 'Nanum-B';
-    color : #727171;
-}
-
+/* 실시간 인기 글 */
 .card{
     margin : 1.5%;
     width: 100%;
@@ -51,6 +67,14 @@ body{
 .card-body{
     padding : 0.6rem;
 }
+
+.card-title{
+    font-size : 0.9rem;
+    margin-bottom:2%;
+    font-family: 'Nanum-B';
+    color : #727171;
+}
+
 .card-text{
     margin-bottom:2%;
     font-family: 'Nanum-R';
@@ -61,13 +85,6 @@ p{
     font-size : 0.7rem;
 }
 
-.card-body{
-    padding : 0.6rem;
-}
-
-p{
-    font-size : 0.7rem;
-}
 p.like{
     margin-bottom : 0;
     text-align : right;
@@ -76,24 +93,7 @@ p.like{
     color : #727171;
 }
 
-img{
-    width : 100%;
-}
-
-#logo{
-    width : 70%;
-    margin-left:15%;   
-}
-
-#searchbutton{
-  width: 80%;
-}
-
-a{
-    padding-left: 3%;
-
-}
-
+/* 지하철 모양 */
 .button{
     margin-bottom : 5%;
     width : 133.8%;
