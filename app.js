@@ -2,14 +2,15 @@ var fs = require('fs');
 var ejs = require('ejs');
 var express = require('express');
 var bodyParser = require('body-parser');
-/*
-var client = mysql.createConnection({
+var mysql = require('mysql');
+
+var db = mysql.createConnection({
   user: 'root',
-  password: 'pearflower2019',
-  database: 'pearflower'
-  port : 3306
+  port : 3306,
+  password: '111111',
+  database: 'MyWay'
 });
-*/
+db.connect();
 
 
 /*여기까지 새로 작성*/
@@ -19,14 +20,12 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
 app.use(express.static('public'));
 app.use(express.static('css'));
 app.use(express.static('image'));
 app.use(express.static('js'));
 
 
-//호스팅 할 때는 포트넘버 80 고정
 app.listen(3000, function () {
   console.log('server running at localhost:3000');
 });
@@ -44,8 +43,17 @@ app.get('/picture', function (request, response) {
   });
 });
 
-app.get('/demo', function (request, response) {
-  fs.readFile('demo.html', 'utf8', function (error, data) {
-      response.send(data);
+app.get('/signUp', function (request, response) {
+  fs.readFile('signUp.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
+
+app.post('/signUp', function (request, response) {
+  var body = request.body;
+  db.query('INSERT INTO sign (id, password, email, name, phone) VALUES (?, ?, ?, ?, ?)', [
+      body.id, body.password, body.email, body.name, body.phone
+  ], function () {
+    response.redirect('/');
   });
 });
