@@ -37,3 +37,15 @@ app.get('/', function (request, response) {
       response.send(data);
   });
 });
+
+app.get('/picture', function (request, response) {
+  fs.readFile('picture.html', 'utf8', function (error, data) {
+      response.send(data);
+  });
+});
+
+app.get('/demo', function (request, response) {
+  fs.readFile('demo.html', 'utf8', function (error, data) {
+      response.send(data);
+  });
+});
