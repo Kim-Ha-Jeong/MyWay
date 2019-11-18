@@ -10,7 +10,6 @@ $(function () {
         iy = $(o).offset().top;
         dx = dy = 0;
         dragging = true;
-        console.log("mousedown - s:", sx, sy, "/i:", ix, iy);
     }).on('mousemove', function (e) {
         if (dragging) {
             dx = e.pageX - sx;
@@ -22,7 +21,6 @@ $(function () {
         dy = e.pageY - sy;
         $(o).offset({ left: ix + dx, top: iy + dy });
         dragging = false;
-        console.log("mouseup - d:", dx, dy, "/i:", ix, iy);
     });
 });
 
