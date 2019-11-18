@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 var db = mysql.createConnection({
-  host : "http://localhost:3000",
   user: 'root',
   port : 3306,
   password: '111111',
@@ -13,20 +12,6 @@ var db = mysql.createConnection({
 });
 db.connect();
 
-app.get('/insert', function (request, response) {
-  fs.readFile('noticeInsert.html', 'utf8', function (error, data) {
-    response.send(data);
-  });
-});
-
-app.post('/noticeManager/insert', function (request, response) {
-  var body = request.body;
-  client.query('INSERT INTO postlist (num, title, post) VALUES (?, ?, ?)', [
-      body.num, body.title, body.post
-  ], function () {
-    response.redirect('/noticeManager');
-  });
-});
 
 /*여기까지 새로 작성*/
 var app = express();
@@ -58,8 +43,17 @@ app.get('/picture', function (request, response) {
   });
 });
 
-app.get('/sign', function (request, response) {
-  fs.readFile('sign.html', 'utf8', function (error, data) {
-      response.send(data);
+app.get('/signUp', function (request, response) {
+  fs.readFile('signUp.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
+
+app.post('/signUp', function (request, response) {
+  var body = request.body;
+  db.query('INSERT INTO sign (id, password, email, name, phone) VALUES (?, ?, ?, ?, ?)', [
+      body.id, body.password, body.email, body.name, body.phone
+  ], function () {
+    response.redirect('/');
   });
 });
