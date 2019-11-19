@@ -618,7 +618,7 @@
                 style="fill:white; stroke:white; stroke-width:0.6; font-size:9px; font-weight:normal; line-height:10px">9</text>
         </g>
     </g>
-    <g class="line" id="B" fill="none" stroke="#fcd204" stroke-linejoin="round" stroke-linecap="round">
+    <g class="line" id="10" fill="none" stroke="#fcd204" stroke-linejoin="round" stroke-linecap="round">
         <path class="path LB P18461872 P18721846" stroke-width="3" d="M 670 950 V 910 "></path>
         <path class="path LB P18721871 P18711872" stroke-width="3" d="M 670 910 V 890 "></path>
         <path class="path LB P18711870 P18701871" stroke-width="3" d="M 670 890 V 875 Q 670 870 675 870 H 695 "></path>
@@ -673,7 +673,7 @@
                 textLength="14">분당</text>
         </g>
     </g>
-    <g class="line" id="S" fill="none" stroke="#cd2234" stroke-linejoin="round" stroke-linecap="round">
+    <g class="line" id="11" fill="none" stroke="#cd2234" stroke-linejoin="round" stroke-linecap="round">
         <path class="path LS P43074308 P43084307" stroke-width="3" d="M 920 680 V 725 "></path>
         <path class="path LS P43084309 P43094308" stroke-width="3" d="M 920 725 V 760 Q 920 765 925 770 L 930 775 ">
         </path>
@@ -3795,8 +3795,12 @@
     <use id="marker-stop" class="routeMarker" href="#def-marker-stop"></use>
     <use id="marker-end" class="routeMarker" href="#def-marker-end"></use>
 </svg>
+<<<<<<< HEAD
+<button id="9th" onclick="text(this.id)">9호선</button>
+=======
 
 <button id="1st" onclick="text()">1호선</button>
+>>>>>>> fcf3929dae0fa44dd623eeb78b8d09992e0b8044
 
 <!--마우스 휠 확대 스크립트-->>
 <script>
@@ -3823,35 +3827,9 @@
         }
     })
 
-<script>
-    function text() {
-            if (document.getElementById('1st').innerHTML == '1호선') {
-                var b1 = document.getElementById('1');
-                if (b1.hasChildNodes()) {
-                    var children = b1.childNodes;
-                    var child = new Array();
-                    for (var i = 0; i < children.length; i++) {
-                        if (children[i].nodeName == 'path') {
-                            Array[i] = children[i];
-                            Array[i].style.opacity = "0.1";
-                        }
-                    }
-                }
-            } else if (document.getElementById('1st').innerHTML == '2호선'){
-                var b2 = document.getElementById('2');
-                if (b2.hasChildNodes()) {
-                    var children = b2.childNodes;
-                    var child = new Array();
-                    for (var i = 0; i < children.length; i++) {
-                        if (children[i].nodeName == 'path') {
-                            Array[i] = children[i];
-                            Array[i].style.opacity = "0.1";
-                        }
-                    }
-                }
-            }
 
-        }
-    
 </script>
+
+
+<!--clicked_id는 파라미터. 나중에 text(this.id)로 파라미터 전달-->
 <script src='/js/map_color.js'></script>
