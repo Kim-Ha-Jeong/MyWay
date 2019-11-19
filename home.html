@@ -33,6 +33,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!--직접 만든 js-->
     <script src="js/map.js"></script>
+    
     <!--지하철 노선도 외부연결-->
     <script type="text/javascript">
         $(document).ready(function() {
@@ -85,17 +86,17 @@
             </div>
             <div class="col-sm-7" id="subwaypic" style="padding-right:0; overflow: hidden;margin-bottom: 1%; background-color: #fff;"></div>
             <div class="col-sm-1" style="padding:0;z-index:-1;">
-                <img onclick='test()' src='/img/1.png' class="button" id="button1" alt="Responsive-image">
-                <img src='/img/2.png' class="button" id="button2" alt="Responsive-image">
-                <img src='/img/3.png' class="button" id="button3" alt="Responsive-image">
-                <img src='/img/4.png' class="button" id="button4" alt="Responsive-image">
-                <img src='/img/5.png' class="button" id="button5" alt="Responsive-image">
-                <img src='/img/6.png' class="button" id="button6" alt="Responsive-image">
-                <img src='/img/7.png' class="button" id="button7" alt="Responsive-image">
-                <img src='/img/8.png' class="button" id="button8" alt="Responsive-image">
-                <img src='/img/9.png' class="button" id="button9" alt="Responsive-image">
-                <img src='/img/boondang.png' class="button" id="button_b" alt="Responsive-image">
-                <img src='/img/shinboondang.png' class="button" id="button_s" alt="Responsive-image">
+                <img  src='/img/1.png' class="button" id="1st" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/2.png' class="button" id="2nd" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/3.png' class="button" id="3th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/4.png' class="button" id="4th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/5.png' class="button" id="5th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/6.png' class="button" id="6th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/7.png' class="button" id="7th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/8.png' class="button" id="8th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/9.png' class="button" id="9th" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/boondang.png' class="button" id="boon" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/shinboondang.png' class="button" id="sinboon" alt="Responsive-image" onclick='test(this.id)'>
             </div>
         </div>
         <div class="row">
@@ -103,6 +104,9 @@
         </div>
     </div>
     <script src='/js/map_color.js'></script>
+    <script type="text/javascript">
+        console.log($("#subwaypic").children)
+    </script>
 </body>
 
 </html>
