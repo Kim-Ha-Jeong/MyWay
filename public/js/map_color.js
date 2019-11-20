@@ -6,7 +6,7 @@ function text(clicked_id) {
     for (var i = 0; i < Line.length; i++) {
         if (clicked_id == Line[i]) {
             var p1 = document.getElementById(String(i + 1));
-            var c1 = document.getElementsByClassName("L" + String(i + 1));
+            var c1 = document.getElementsByClassName("L" + circle[i]);  //circle, g(환승역용 circle), text(역 이름) 들어옴.
             index = i;
 
             for (var n = 0; n < Line.length; n++) {
@@ -14,7 +14,7 @@ function text(clicked_id) {
                     continue;
                 else {
                     var p2 = document.getElementById(String(n + 1));
-                    var c1 = document.getElementsByClassName("L" + circle[n]);
+                    var c2 = document.getElementsByClassName("L" + circle[n]);
                     if (p2.hasChildNodes()) {
                         var children = p2.childNodes;
                         var child = new Array();
@@ -25,11 +25,11 @@ function text(clicked_id) {
                             }
                         }
                     }
-                    if (c1) {
+                    if (c2) {
                         var children = new Array();
-                        for (var j = 0; j < c1.length; j++) {
-                            if (c1[j].nodeName == 'circle' || c1[j].nodeName == 'g' || c1[j].nodeName == 'text') {
-                                Array[j] = c1[j];
+                        for (var j = 0; j < c2.length; j++) {
+                            if (c2[j].nodeName == 'circle' || c2[j].nodeName == 'g' || c2[j].nodeName == 'text') {
+                                Array[j] = c2[j];
                                 Array[j].style.opacity = "0.1";
                             }
                         }
@@ -42,6 +42,15 @@ function text(clicked_id) {
                 for (var j = 0; j < children.length; j++) {
                     if (children[j].nodeName == 'path') {
                         Array[j] = children[j];
+                        Array[j].style.opacity = "1.0";
+                    }
+                }
+            }
+            if (c1) {
+                var children = new Array();
+                for (var j = 0; j < c1.length; j++) {
+                    if (c1[j].nodeName == 'g' || c1[j].nodeName == 'text') {
+                        Array[j] = c1[j];
                         Array[j].style.opacity = "1.0";
                     }
                 }
