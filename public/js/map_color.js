@@ -6,7 +6,7 @@ function text(clicked_id) {
     for (var i = 0; i < Line.length; i++) {
         if (clicked_id == Line[i]) {
             var p1 = document.getElementById(String(i + 1));
-            var c1 = document.getElementsByClassName("L" + String(i + 1));
+            var c1 = document.getElementsByClassName("L" + circle[n]);
             index = i;
 
             for (var n = 0; n < Line.length; n++) {
@@ -40,8 +40,17 @@ function text(clicked_id) {
                 var children = p1.childNodes;
                 var child = new Array();
                 for (var j = 0; j < children.length; j++) {
-                    if (children[j].nodeName == 'path') {
+                    if (children[j].nodeName == 'path' || c1[j].nodeName == 'text') {
                         Array[j] = children[j];
+                        Array[j].style.opacity = "1.0";
+                    }
+                }
+            }
+            if (c1) {
+                var children = new Array();
+                for (var j = 0; j < c1.length; j++) {
+                    if (c1[j].nodeName == 'g' || c1[j].nodeName == 'text') {
+                        Array[j] = c1[j];
                         Array[j].style.opacity = "1.0";
                     }
                 }
