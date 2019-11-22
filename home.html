@@ -19,28 +19,29 @@
 
     <!--favicon-->
     <link rel="shortcut icon" href="/img/logo.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF"> 
+    <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/path/to/favicon-144.png">
     <meta name="msapplication-TileImage" content="/img/logo.png">
 
     <!-- 지하철 노선도 관련-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
-    
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    
+
     <!--직접 만든 js-->
     <script src="js/map.js"></script>
     <script src='/js/map_color.js'></script>
-    
+
     <!--지하철 노선도 외부연결-->
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#subwaypic").load("/html/subwaypic.html",function(data){
-                var page=$(data).contents();
+        $(document).ready(function () {
+            $("#subwaypic").load("/html/subwaypic.html", function (data) {
+                var page = $(data).contents();
                 console.log(page);
             });
         }); 
@@ -89,9 +90,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-7" id="subwaypic" style="padding-right:0; overflow: hidden;margin-bottom: 1%; background-color: #fff;"></div>
+            <div class="col-sm-7" id="subwaypic"
+                style="padding-right:0; overflow: hidden;margin-bottom: 1%; background-color: #fff;"></div>
             <div class="col-sm-1" style="padding:0;z-index:-1;">
-                <img  src='/img/1.png' class="button" id="1st" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/1.png' class="button" id="1st" alt="Responsive-image" onclick='test(this.id)'>
                 <img src='/img/2.png' class="button" id="2nd" alt="Responsive-image" onclick='test(this.id)'>
                 <img src='/img/3.png' class="button" id="3th" alt="Responsive-image" onclick='test(this.id)'>
                 <img src='/img/4.png' class="button" id="4th" alt="Responsive-image" onclick='test(this.id)'>
@@ -101,7 +103,8 @@
                 <img src='/img/8.png' class="button" id="8th" alt="Responsive-image" onclick='test(this.id)'>
                 <img src='/img/9.png' class="button" id="9th" alt="Responsive-image" onclick='test(this.id)'>
                 <img src='/img/boondang.png' class="button" id="boon" alt="Responsive-image" onclick='test(this.id)'>
-                <img src='/img/shinboondang.png' class="button" id="sinboon" alt="Responsive-image" onclick='test(this.id)'>
+                <img src='/img/shinboondang.png' class="button" id="sinboon" alt="Responsive-image"
+                    onclick='test(this.id)'>
             </div>
         </div>
         <div class="row">
