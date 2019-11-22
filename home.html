@@ -31,13 +31,18 @@
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
     <!--직접 만든 js-->
     <script src="js/map.js"></script>
+    <script src='/js/map_color.js'></script>
     
     <!--지하철 노선도 외부연결-->
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#subwaypic").load("/html/subwaypic.html");
+            $("#subwaypic").load("/html/subwaypic.html",function(data){
+                var page=$(data).contents();
+                console.log(page);
+            });
         }); 
     </script>
 </head>
@@ -104,10 +109,6 @@
             <button type="button" class="btn btn-light" onclick="location.href='/login'">로그인</button>
         </div>
     </div>
-    <script src='/js/map_color.js'></script>
-    <script type="text/javascript">
-        console.log($("#subwaypic").children)
-    </script>
 </body>
 
 </html>
