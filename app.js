@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '1234',
+  password: '111111',
   database: 'MyWay'
 });
 db.connect();
@@ -52,9 +52,7 @@ app.post('/signUp', function (request, response) {
   });
 });
 
-var express = require('express');
 var router = express.Router();
-
 app.get('/login', function (request, response) {
   fs.readFile('login.html', 'utf8', function (error, data) {
     response.send(data);
