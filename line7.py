@@ -7,14 +7,14 @@ import datetime
 driver=webdriver.Chrome('C:/Users/suzie/Downloads/chromedriver_win32/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
 
 dt = datetime.datetime.now()
-filename = '6호선' + dt.strftime("%Y_%m_%d")
+filename = '7호선' + dt.strftime("%Y_%m_%d")
 f = open(filename + '.csv', 'w', encoding='cp949')
 
 station_name_final=[]
 facil_list_final=[]
 
-for i in range(11,49):          #응암부터 돌고 종착(봉화산)까지
-    url='https://place.map.kakao.com/SES26'+str(i)
+for i in range(11,62):          #응암부터 돌고 종착(봉화산)까지
+    url='https://place.map.kakao.com/SES27'+str(i)
     driver.get(url)
     time.sleep(3)
 

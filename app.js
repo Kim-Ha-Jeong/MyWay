@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -54,6 +54,7 @@ app.post('/signUp', function (request, response) {
 });
 
 /* 로그인 */
+module.exports = router;
 app.get('/login', function (request, response) {
   fs.readFile('login.html', 'utf8', function (error, data) {
     response.send(data);
@@ -61,6 +62,36 @@ app.get('/login', function (request, response) {
 });
 
 app.post('/login', function (request, response) {
+  var userId = request.body['userId'];
+  var userPw = request.body['userPw'];
+  db.query('select * from sign where id=? and password=?',[userId,userPw], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+            /*
+              response.send('id : ' + rows[0]['id'] + '<br>' +
+                  'pw : ' + rows[0]['password']+'<br>'+
+                  'name : '+rows[0]['name']);
+            */
+              var obj={"name":rows[0]['name']}
+              response.request('/');
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
+app.get('/homeLogin',function(request,response){
+  fs.readFile('homeLogin.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
+
+app.post('/homeLogin', function (request, response) {
     var userId = request.body['userId'];
     var userPw = request.body['userPw'];
     db.query('select * from sign where id=? and password=?',[userId,userPw], function (err, rows, fields) {
@@ -71,7 +102,9 @@ app.post('/login', function (request, response) {
                     'pw : ' + rows[0]['password']+'<br>'+
                     'name : '+rows[0]['name']);
               */
-              response.redirect('/');
+                var obj={name : rows[0]['name']};
+                response.redirect
+
             } else {
                 response.send('no data');
             }
@@ -82,7 +115,6 @@ app.post('/login', function (request, response) {
     });
 });
 
-module.exports = router;
 
 app.get('/dropOut', function (request, response) {
   fs.readFile('dropOut.html', 'utf8', function (error, data) {
