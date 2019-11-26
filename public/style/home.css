@@ -26,21 +26,61 @@ img{
 
 /* 로고 */
 #logo{
-    width : 70%;
-    margin-left:15%;   
+    width : 20%;
+    margin: auto;   
 }
 
 /* 전체 요소 틀 */
 #main-contain{
-    width : 80%;
-    margin-top: 7%;
+    width : 67%;
+    margin-top: 3%;
     margin-right: auto;
     margin-left: auto;
 }
 
 /* searchbutton관련 */
 #searchbutton{
-    width: 80%;
+    width: 5%;
+}
+
+/* 검색창 관련 */
+#fakebox{
+    background-color : white;
+    width: 40%;
+    margin: auto;
+    border : 5px solid #00A4FF;
+    border-radius : 20px;
+    font-size : 1.2rem;
+    padding : 1% 0 1% 1%;
+    color : black;
+}
+
+input{
+    border : 0px;
+    width : 90%;
+    margin: auto;
+}
+
+input:focus {
+    outline:none;
+}
+
+#hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: #00A4FF;
+	font-size: 12px;
+	margin: 8px 0px;
+}
+#hr-sect::before,
+#hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: #00A4FF;
+	height: 5px;
+	font-size: 0px;
+	line-height: 0px;
 }
 
 a{
@@ -50,7 +90,6 @@ a{
 
 /* 제목 */
 .title{
-    margin-top : 10%;
     font-size : 1.12rem;
     color : #00A3FE;
     font-family: 'Nanum-B';
@@ -82,7 +121,9 @@ a{
 }
 
 p{
-    font-size : 0.7rem;
+    margin: auto;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
 }
 
 p.like{
