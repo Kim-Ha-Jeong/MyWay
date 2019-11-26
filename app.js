@@ -71,7 +71,8 @@ app.post('/login', function (request, response) {
                     'pw : ' + rows[0]['password']+'<br>'+
                     'name : '+rows[0]['name']);
               */
-              response.redirect('/');
+              var data = '<h2>'+rows[0]['name']+'</h2>';
+              response.send(data);
             } else {
                 response.send('no data');
             }
