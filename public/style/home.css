@@ -95,6 +95,27 @@ a{
     color : #00A3FE;
     font-family: 'Nanum-B';
 }
+/* 로그인 div */
+.btn{
+    width : 100%;
+    font-size : 0.9rem;
+    background-color : #00A4FF;
+    color : white;
+    border : 7px;
+    font-family : 'Nanum-B';
+    margin : 2% 0;
+}
+
+a{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.8rem;
+    margin : auto;
+}
+
+a:link,a:active,a:hover,a:visited{
+    text-decoration:none;
+    color : rgba(0,0,0,0.5);
+}
 
 /* 실시간 인기 글 */
 .card{
@@ -125,6 +146,8 @@ p{
     margin: auto;
     font-size: 0.7rem;
     margin-bottom: 1rem;
+    color : #929292;
+    font-family: 'Nanum-R';
 }
 
 p.like{
