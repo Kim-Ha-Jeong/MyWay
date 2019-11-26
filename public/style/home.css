@@ -1,3 +1,4 @@
+/* 폰트 적용 */
 @font-face { 
     font-family: 'Nanum-B'; 
     src: url('/font/NanumSquareB.ttf'); 
@@ -14,33 +15,109 @@
     font-family: 'Nanum-R'; 
     src: url('/font/NanumSquareR.ttf'); 
 }
-
+/* 페이지 공통 */
 body{
-    background-color : #FCF9E6;
+    background-color : #F1F5F8;
 }
 
+img{
+    width : 100%;
+}
+
+/* 로고 */
+#logo{
+    width : 20%;
+    margin: auto;   
+}
+
+/* 전체 요소 틀 */
 #main-contain{
-    width : 80%;
-    margin-top: 11%;
+    width : 67%;
+    margin-top: 3%;
     margin-right: auto;
     margin-left: auto;
 }
 
+/* searchbutton관련 */
+#searchbutton{
+    width: 5%;
+}
 
+/* 검색창 관련 */
+#fakebox{
+    background-color : white;
+    width: 50%;
+    margin: auto;
+    border : 5px solid #00A4FF;
+    border-radius : 20px;
+    font-size : 1.2rem;
+    padding : 1% 0 1% 1%;
+    color : black;
+}
+
+input{
+    border : 0px;
+    width : 90%;
+    margin: auto;
+    font-size : 1.15rem;
+}
+
+input:focus {
+    outline:none;
+}
+
+#hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: #00A4FF;
+	font-size: 12px;
+	margin: 8px 0px;
+}
+#hr-sect::before,
+#hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: #00A4FF;
+	height: 5px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+a{
+      padding-left: 3%;
+  
+}
+
+/* 제목 */
 .title{
-    margin-top : 10%;
     font-size : 1.12rem;
     color : #00A3FE;
     font-family: 'Nanum-B';
 }
-
-.card-title{
+/* 로그인 div */
+.btn{
+    width : 100%;
     font-size : 0.9rem;
-    margin-bottom:2%;
-    font-family: 'Nanum-B';
-    color : #727171;
+    background-color : #00A4FF;
+    color : white;
+    border : 7px;
+    font-family : 'Nanum-B';
+    margin : 2% 0;
 }
 
+a{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.8rem;
+    margin : auto;
+}
+
+a:link,a:active,a:hover,a:visited{
+    text-decoration:none;
+    color : rgba(0,0,0,0.5);
+}
+
+/* 실시간 인기 글 */
 .card{
     margin : 1.5%;
     width: 100%;
@@ -51,6 +128,14 @@ body{
 .card-body{
     padding : 0.6rem;
 }
+
+.card-title{
+    font-size : 0.9rem;
+    margin-bottom:2%;
+    font-family: 'Nanum-B';
+    color : #727171;
+}
+
 .card-text{
     margin-bottom:2%;
     font-family: 'Nanum-R';
@@ -58,16 +143,13 @@ body{
 }
 
 p{
-    font-size : 0.7rem;
+    margin: auto;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    color : #929292;
+    font-family: 'Nanum-R';
 }
 
-.card-body{
-    padding : 0.6rem;
-}
-
-p{
-    font-size : 0.7rem;
-}
 p.like{
     margin-bottom : 0;
     text-align : right;
@@ -76,24 +158,7 @@ p.like{
     color : #727171;
 }
 
-img{
-    width : 100%;
-}
-
-#logo{
-    width : 70%;
-    margin-left:15%;   
-}
-
-#searchbutton{
-  width: 80%;
-}
-
-a{
-    padding-left: 3%;
-
-}
-
+/* 지하철 모양 */
 .button{
     margin-bottom : 5%;
     width : 133.8%;
