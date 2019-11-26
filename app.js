@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
