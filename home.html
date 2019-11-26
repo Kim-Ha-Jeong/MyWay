@@ -67,9 +67,11 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">[잡담] 1호선 again남</h5>
-                            <p class="card-text">ㅋㅋㅋㅋㅋ허락 받고 동영상 찍음
-                            <p class="like">추천 1367 댓글 25</p>
+                            <p style="margin-bottom:0;">나만의 MyWay를 더 편리하게 이용하는 방법!</p>
+                            <button type="button" class="btn btn-light" onclick="location.href='/login'">로그인</button>
+                            <p class="like">
+                                <a href="/signUp">회원가입</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -119,11 +121,9 @@
                     onclick='test(this.id)'>
             </div>
         </div>
-        <div class="row">
-            <button type="button" class="btn btn-light" onclick="location.href='/signUp'">회원가입</button>
-            <button type="button" class="btn btn-light" onclick="location.href='/login'">로그인</button>
-            <button type="button" class="btn btn-light" onclick="location.href='/dropOut'">회원탈퇴</button>
-        </div>
+    </div>
+    <div class="row">
+        <h1><%=data.name%></h1>
     </div>
 </body>
 
