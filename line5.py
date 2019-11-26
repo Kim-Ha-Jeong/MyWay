@@ -13,7 +13,7 @@ f = open(filename + '.csv', 'w', encoding='cp949')
 station_name_final=[]
 facil_list_final=[]
 
-for i in range(11,13):
+for i in range(11,63):                                  #종착부터 천호역, 길동에서 상일동, 둔촌동에서 마천, 마지막 강동(갈림길)
     url='https://place.map.kakao.com/SES25'+str(i)
     driver.get(url)
     time.sleep(3)
@@ -30,7 +30,6 @@ for i in range(11,13):
     for facil in facil_list:
         print(facil.text+'\n\n')
         facil_list_final.append(facil.text)
-
 
 
 count=0
