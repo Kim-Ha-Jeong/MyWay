@@ -7,7 +7,7 @@ import datetime
 driver=webdriver.Chrome('C:/Users/suzie/Downloads/chromedriver_win32/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
 
 dt = datetime.datetime.now()
-filename = '지하철' + dt.strftime("%Y_%m_%d")
+filename = '5호선' + dt.strftime("%Y_%m_%d")
 f = open(filename + '.csv', 'w', encoding='cp949')
 
 station_name_final=[]
