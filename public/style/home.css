@@ -46,7 +46,7 @@ img{
 /* 검색창 관련 */
 #fakebox{
     background-color : white;
-    width: 40%;
+    width: 50%;
     margin: auto;
     border : 5px solid #00A4FF;
     border-radius : 20px;
@@ -59,6 +59,7 @@ input{
     border : 0px;
     width : 90%;
     margin: auto;
+    font-size : 1.15rem;
 }
 
 input:focus {
