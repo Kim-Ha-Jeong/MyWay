@@ -32,6 +32,9 @@
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!--직접 만든 js-->
     <script src="js/map.js"></script>
@@ -42,10 +45,28 @@
         $(document).ready(function () {
             $("#subwaypic").load("/html/subwaypic.html", function (data) {
                 var page = $(data).contents();
-                console.log(page);
             });
         }); 
     </script>
+
+    <!--자동완성-->
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function() {
+            var availableCity = ["청량리"];
+            $("#station").autocomplete({
+                source: availableCity,
+                select: function(event, ui) {
+                    console.log(ui.item);
+                },
+                focus: function(event, ui) {
+                    return false;
+                    //event.preventDefault();
+                }
+            });
+        });
+        //]]>
+        </script>
 </head>
 
 <body>
@@ -54,6 +75,7 @@
             <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
         </div>
         <div class="row">
+
             <div id="hr-sect">
                 <div id="fakebox">
                     <form method="post">
