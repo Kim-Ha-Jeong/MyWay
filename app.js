@@ -106,36 +106,6 @@ app.post('/login', function (request, response) {
   });
 });
 
-app.get('/homeLogin',function(request,response){
-  fs.readFile('homeLogin.html', 'utf8', function (error, data) {
-    response.send(data);
-  });
-});
-
-app.post('/homeLogin', function (request, response) {
-    var userId = request.body['userId'];
-    var userPw = request.body['userPw'];
-    db.query('select * from sign where id=? and password=?',[userId,userPw], function (err, rows, fields) {
-        if (!err) {
-            if (rows[0]!=undefined) {
-              /*
-                response.send('id : ' + rows[0]['id'] + '<br>' +
-                    'pw : ' + rows[0]['password']+'<br>'+
-                    'name : '+rows[0]['name']);
-              */
-              response.redirect("/")
-
-            } else {
-                response.send('no data');
-            }
-
-        } else {
-            response.send('error : ' + err);
-        }
-    });
-});
-
-
 app.get('/dropOut', function (request, response) {
   fs.readFile('dropOut.html', 'utf8', function (error, data) {
     response.send(data);
@@ -170,5 +140,45 @@ app.get('/B01', function (request, response) {
         data: results
       }));
     });
+  });
+});
+
+/* 게시판 화면*/
+app.get('/board', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+/* 게시판 글 상세보기 */
+app.get('/board/:num', function (request, response) {
+  //파일 읽기
+  fs.readFile('boardPost.html', 'utf8', function (error, data) {
+    //데이터베이스 쿼리 실행
+    db.query('SELECT * FROM board WHERE num=?', [request.params.num], function (error, results) {
+      //응답
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/insert', function (request, response) {
+  fs.readFile('boardInsert.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
+
+app.post('/insert', function (request, response) {
+  var body = request.body;
+  db.query('INSERT INTO board (title, description) VALUES (?, ?)', [
+      body.title, body.description
+  ], function () {
+    response.redirect('/board');
   });
 });
