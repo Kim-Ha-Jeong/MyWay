@@ -33,7 +33,11 @@ app.listen(3000, function () {
 /* 홈 */
 app.get('/', function (request, response) {
   fs.readFile('home.html', 'utf8', function (error, data) {
-      response.send(data);
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
   });
 });
 
@@ -58,6 +62,7 @@ app.post('/', function (request, response) {
       }
   });
 });
+
 
 /* 회원가입 */
 app.get('/signUp', function (request, response) {

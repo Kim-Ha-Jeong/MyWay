@@ -33,7 +33,7 @@ img{
 /* 전체 요소 틀 */
 #main-contain{
     width : 67%;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -104,7 +104,7 @@ a{
 
 /* 제목 */
 .title{
-    font-size : 1.12rem;
+    font-size : 1.0rem;
     color : #00A3FE;
     font-family: 'Nanum-B';
 }
