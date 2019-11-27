@@ -37,6 +37,28 @@ app.get('/', function (request, response) {
   });
 });
 
+app.post('/', function (request, response) {
+  var station = request.body['search'];
+  if(station.match("#")){
+      station_name=station.split('#');
+      station=station_name[1];   
+  }
+  db.query('select * from station where 역이름=?', [station], function (err, rows, fields) {
+    if (!err) {
+      if (rows[0]!=undefined) {
+          var obj=rows[0]['역이름'];
+          response.send(obj);
+
+      } else {
+          response.send('no data');
+      }
+
+  } else {
+      response.send('error : ' + err);
+  }
+  });
+});
+
 /* 회원가입 */
 app.get('/signUp', function (request, response) {
   fs.readFile('signUp.html', 'utf8', function (error, data) {
