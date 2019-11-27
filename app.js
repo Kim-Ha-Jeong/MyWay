@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -63,27 +63,7 @@ app.post('/', function (request, response) {
   });
 });
 
-app.post('/', function (request, response) {
-  var station = request.body['search'];
-  if(station.match("#")){
-      station_name=station.split('#');
-      station=station_name[1];   
-  }
-  db.query('select * from station where 역이름=?', [station], function (err, rows, fields) {
-    if (!err) {
-      if (rows[0]!=undefined) {
-          var obj=rows[0]['역이름'];
-          response.send(obj);
 
-      } else {
-          response.send('no data');
-      }
-
-  } else {
-      response.send('error : ' + err);
-  }
-  });
-});
 
 /* 회원가입 */
 app.get('/signUp', function (request, response) {

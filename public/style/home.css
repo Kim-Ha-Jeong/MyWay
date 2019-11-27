@@ -177,3 +177,8 @@ p.like{
     width : 133.8%;
 }
 
+.line_button{
+    background-color: transparent;
+    border: 0px;
+    width: 100%;
+}
