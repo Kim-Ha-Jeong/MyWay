@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head>
-
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +15,7 @@
   </head>
   
   <body>
-      <div class="row">
+    <div class="row">
       <div class="col">
         <table class="table">
             <thead class="thead-light">
@@ -24,27 +23,21 @@
                 <th scope="col" style="width:2.5%">#</th>
                 <th scope="col" style="width:65%">제목</th>
                 <th scope="col" style="width:15%">수정</th>
+                <th scope="col" style="width:15%">삭제</th>
               </tr>
             </thead>
             <tbody>
                 <% data.reverse().forEach(function (item, index) { %>
                   <tr>
-                    <td style="width:2.5%"><a href="/board/<%= item.num %>"><%= item.num %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.title %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.created %></td>
+                    <td style="width:2.5%"><a href="/notice/post/<%= item.id %>"><%= item.역이름 %></td>
+                    <td style="width:65%"><a href="/notice/post/<%= item.id %>"><%= item.선 %></td>
+                    <td style="width:15%"><a href="/noticeManager/edit/<%= item.id %>">수정</a></td>
+                    <td style="width:15%"><a href="/noticeManager/delete/<%= item.id %>">삭제</a></td>
                   </tr>
                 <% }); %>
             </tbody>
           </table>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-light noticebutt" onclick="location.href='/insert'">추가</button>
-      </div>
-    </div>
-
     </div>
   </body>
 </html>
