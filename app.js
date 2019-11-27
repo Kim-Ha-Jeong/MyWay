@@ -102,13 +102,8 @@ app.post('/homeLogin', function (request, response) {
                     'pw : ' + rows[0]['password']+'<br>'+
                     'name : '+rows[0]['name']);
               */
-<<<<<<< HEAD
               response.redirect("/")
-=======
-                var obj={name : rows[0]['name']};
-                response.redirect
 
->>>>>>> 3de0362e419122c8baa827f7b884c4e077233aec
             } else {
                 response.send('no data');
             }
