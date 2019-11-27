@@ -33,14 +33,25 @@ img{
 /* 전체 요소 틀 */
 #main-contain{
     width : 67%;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
 }
 
 /* searchbutton관련 */
+#searchrow{
+    padding-right: 5%;
+    padding-left: 1%;
+}
+
+#search{
+    width: 100%;
+}
+
 #searchbutton{
-    width: 5%;
+    background-color: white;
+    border: 0px;
+    width: 10%;
 }
 
 /* 검색창 관련 */
@@ -53,13 +64,15 @@ img{
     font-size : 1.2rem;
     padding : 1% 0 1% 1%;
     color : black;
+    overflow : hidden;
 }
 
 input{
     border : 0px;
     width : 90%;
     margin: auto;
-    font-size : 1.15rem;
+    font-size: 1.15rem;
+    padding-left: 3%;
 }
 
 input:focus {
@@ -91,7 +104,7 @@ a{
 
 /* 제목 */
 .title{
-    font-size : 1.12rem;
+    font-size : 1.0rem;
     color : #00A3FE;
     font-family: 'Nanum-B';
 }
