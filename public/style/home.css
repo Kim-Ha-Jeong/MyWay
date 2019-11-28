@@ -178,7 +178,13 @@ p.like{
 }
 
 .line_button{
-    background-color: transparent;
-    border: 0px;
-    width: 100%;
+    width: 138%;
+    padding: 0;
+    margin: 0;
+    border : 0;
+    background : transparent;
+}
+
+.bar{
+    padding-left:0%!important;
 }
