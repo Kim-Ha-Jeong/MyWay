@@ -67,6 +67,11 @@ app.post('/', function (request, response) {
   });
 });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f8920fcf8ca2ea0a67fef60dd9082429a5bd3325
 /* 회원가입 */
 app.get('/signUp', function (request, response) {
   fs.readFile('signUp.html', 'utf8', function (error, data) {
