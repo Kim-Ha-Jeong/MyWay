@@ -1,51 +1,56 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-    <title>공지사항</title>
-      <!-- Font Awesome -->
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  </head>
-  
-  <body>
-      <div class="row">
-      <div class="col">
-        <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col" style="width:2.5%">#</th>
-                <th scope="col" style="width:65%">제목</th>
-                <th scope="col" style="width:15%">수정</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% data.reverse().forEach(function (item, index) { %>
-                  <tr>
-                    <td style="width:2.5%"><a href="/board/<%= item.num %>"><%= item.num %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.title %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.created %></td>
-                  </tr>
-                <% }); %>
-            </tbody>
-          </table>
-      </div>
-    </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/style/board.css" type="text/css">
+
+  <title>공지사항</title>
+  <!-- Font Awesome -->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body>
+  <div class="row">
+    <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
+  </div>
+  <p class="title">실시간 지하철 수다</p>
+  <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+  <div class="container" id="main-contain">
     <div class="row">
       <div class="col">
-        <button type="button" class="btn btn-light noticebutt" onclick="location.href='/insert'">추가</button>
+        <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글 남기기</button>
+      </div>
+    </div>
+    <% data.reverse().forEach(function (item, index) { %>
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
+          <h5 class="card-title"><%= item.title %></h5>
+          <hr>
+          </hr>
+          <p class="content" id="c1"><%= item.created %></p>
+          <p class="card-text"><%= item.description %></p>
+          <p class="content" id="c1">추천 1367 댓글 25</p>
+        </div>
       </div>
     </div>
 
-    </div>
-  </body>
-</html>
+    <% }); %>
 
+  </div>
+  </div>
+</body>
+
+</html>
