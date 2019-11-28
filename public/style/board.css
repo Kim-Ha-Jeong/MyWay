@@ -116,3 +116,19 @@ p{
     color : white;
     font-family : 'Nanum-B';
 }
+
+select {
+    margin : 0 2% 0 2%;
+    width: 150px;
+    padding: 0.5em 0.3em;
+    font-family : 'Nanum-R';
+    border-radius: 10px;
+    border-color : #DDDDDD;
+}
+
+.text{
+    width : 72%;
+    border-radius: 10px;
+    border-color : #DDDDDD;
+    box-shadow : none
+}

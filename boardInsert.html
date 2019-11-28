@@ -34,11 +34,21 @@
             <form method="post">
               <fieldset>
                 <p class="title2" style="text-align:left"><label>제목</label></p>
-                <input type="text" style="width: 100%" name="title" />
+                <div class="row">
+                  <select name="type">
+                    <option value="">글 분류 선택</option>
+                    <option value="학생">잡담</option>
+                    <option value="회사원">정보</option>
+                    <option value="기타">긴급</option>
+                  </select>
+                  <input type="text" class="text" name="title"></input>
+                </div>
                 <p class="title2" style="text-align:left"><label>내용</label></p>
-                <textarea style="width:100%" rows="10" name="description"></textarea>
+                <textarea style="width:100%; border-radius: 10px; border-color : #DDDDDD;" rows="10"
+                  name="description"></textarea>
                 <button type="submit" class="btn btn-light">작성</button>
-                <button type="button" class="btn btn-light" style="background-color:#ffffff; color : #999999" onclick="location.href='/board'">취소</button>
+                <button type="button" class="btn btn-light" style="background-color:#ffffff; color : #999999"
+                  onclick="location.href='/board'">취소</button>
               </fieldset>
             </form>
           </div>
