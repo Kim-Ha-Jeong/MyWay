@@ -105,19 +105,10 @@ a{
 /* 제목 */
 .title{
     font-size : 1.0rem;
-    color : #00A3FE;
+    color : BLACK;
     font-family: 'Nanum-B';
 }
-/* 로그인 div */
-.btn{
-    width : 100%;
-    font-size : 0.9rem;
-    background-color : #00A4FF;
-    color : white;
-    border : 7px;
-    font-family : 'Nanum-B';
-    margin : 2% 0;
-}
+
 
 a{
     color: rgba(0,0,0,0.5);
