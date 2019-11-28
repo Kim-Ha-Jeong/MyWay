@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -67,11 +67,6 @@ app.post('/', function (request, response) {
   });
 });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f8920fcf8ca2ea0a67fef60dd9082429a5bd3325
 /* 회원가입 */
 app.get('/signUp', function (request, response) {
   fs.readFile('signUp.html', 'utf8', function (error, data) {
