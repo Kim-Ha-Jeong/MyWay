@@ -57,7 +57,7 @@ img{
 /* 검색창 관련 */
 #fakebox{
     background-color : white;
-    width: 50%;
+    width: 30%;
     margin: auto;
     border : 5px solid #00A4FF;
     border-radius : 20px;
@@ -157,7 +157,7 @@ a:link,a:active,a:hover,a:visited{
 
 p{
     margin: auto;
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     margin-bottom: 1rem;
     color : #929292;
     font-family: 'Nanum-R';
@@ -187,4 +187,15 @@ p.like{
 
 .bar{
     padding-left:0%!important;
+}
+
+.moreshow{
+    font-size : 1rem;
+    background-color : none;
+    color : #aaaaaa;
+    font-family : 'Nanum-R';
+    background-color: transparent !important;
+    border-color: transparent;
+    border: none;
+    width:100%;
 }
