@@ -132,6 +132,5 @@ select {
 .text{
     width : 72%;
     border-radius: 10px;
-    border-color : #DDDDDD;
-    box-shadow : none
+    border-color : none;
 }
