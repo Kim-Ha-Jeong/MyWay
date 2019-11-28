@@ -20,29 +20,32 @@
 </head>
 
 <body>
-  <h5 class="font-weight-bold titleP">글 남기기</h5>
-
   <div class="row">
-    <div class="col">
-      <form method="post">
-        <fieldset>
-          <table class="table">
-            <tr>
-              <td style="width: 10%; text-align: right;" ;><label>제목</label></td>
-              <td style="width: 90%"><input type="text" style="width: 100%" name="title" /></td>
-            </tr>
-            <tr>
-              <td style="width: 10%; text-align: right" ;><label>내용</label></td>
-              <td style="width: 90%">
-                <textarea style="width:100%" rows="15" name="description"></textarea>
-              </td>
-            </tr>
-          </table>
-          <button type="submit" class="btn btn-light noticebutt">작성</button>
-        </fieldset>
-      </form>
-    </div>
+    <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
   </div>
+  <p class="title">실시간 지하철 수다 작성하기</p>
+  <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+  <div class="container" id="main-contain">
+    <div class="row">
+      <div class="col">
+
+        <div class="row">
+          <div class="col">
+            <form method="post">
+              <fieldset>
+                <p class="title2" style="text-align:left"><label>제목</label></p>
+                <input type="text" style="width: 100%" name="title" />
+                <p class="title2" style="text-align:left"><label>내용</label></p>
+                <textarea style="width:100%" rows="10" name="description"></textarea>
+                <button type="submit" class="btn btn-light">작성</button>
+                <button type="button" class="btn btn-light" style="background-color:#ffffff; color : #999999" onclick="location.href='/board'">취소</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </body>
 

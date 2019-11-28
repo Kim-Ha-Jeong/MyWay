@@ -21,38 +21,33 @@
 </head>
 
 <body>
-    <div class="row">
-        <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
-      </div>
-      <p class="title">실시간 지하철 수다</p>
-      <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+  <div class="row">
+    <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
+  </div>
+  <p class="title">실시간 지하철 수다</p>
+  <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
   <div class="container" id="main-contain">
     <div class="row">
       <div class="col">
-        <div class="row">
-          <div class="col">
-            <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글 남기기</button>
-          </div>
-        </div>
-        <% data.reverse().forEach(function (item, index) { %>
-        <div class="row">
-          <div class="card">
-            <div class="card-body">
-              <p class="content"><%= item.num %></p>
-              <h5 class="card-title"><%= item.title %></h5>
-              <hr>
-              </hr>
-              <p class="content" id="c1"><%= item.created %></p>
-              <p class="card-text"><%= item.description %></p>
-              <p class="content" id="c1">추천 1367 댓글 25</p>
-            </div>
-          </div>
-        </div>
-
-        <% }); %>
-
+        <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글 남기기</button>
       </div>
     </div>
+    <% data.reverse().forEach(function (item, index) { %>
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
+          <h5 class="card-title"><%= item.title %></h5>
+          <hr>
+          </hr>
+          <p class="content" id="c1"><%= item.created %></p>
+          <p class="card-text"><%= item.description %></p>
+          <p class="content" id="c1">추천 1367 댓글 25</p>
+        </div>
+      </div>
+    </div>
+
+    <% }); %>
 
   </div>
   </div>
