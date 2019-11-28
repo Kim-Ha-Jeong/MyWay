@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <title>공지사항</title>
+      <!-- Font Awesome -->
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  </head>
+  
+  <body>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" style="width:2.5%">#</th>
+                <th scope="col" style="width:65%">제목</th>
+                <th scope="col" style="width:15%">수정</th>
+                <th scope="col" style="width:15%">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% data.reverse().forEach(function (item, index) { %>
+                  <tr>
+                    <td style="width:2.5%"><a href="/notice/post/<%= item.id %>"><%= item.역이름 %></td>
+                    <td style="width:65%"><a href="/notice/post/<%= item.id %>"><%= item.선 %></td>
+                    <td style="width:15%"><a href="/noticeManager/edit/<%= item.id %>">수정</a></td>
+                    <td style="width:15%"><a href="/noticeManager/delete/<%= item.id %>">삭제</a></td>
+                  </tr>
+                <% }); %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>
+
