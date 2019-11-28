@@ -188,3 +188,14 @@ p.like{
 .bar{
     padding-left:0%!important;
 }
+
+.moreshow{
+    font-size : 1rem;
+    background-color : none;
+    color : #aaaaaa;
+    font-family : 'Nanum-R';
+    background-color: transparent !important;
+    border-color: transparent;
+    border: none;
+    width:100%;
+}
