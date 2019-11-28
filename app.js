@@ -43,6 +43,10 @@ app.get('/', function (request, response) {
 
 app.post('/', function (request, response) {
   var stationName = request.body['stationName'];
+  if(stationName.match("#")){
+    station_name=stationName.split('#');
+    stationName=station_name[1];   
+}
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
@@ -63,8 +67,11 @@ app.post('/', function (request, response) {
   });
 });
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> f8920fcf8ca2ea0a67fef60dd9082429a5bd3325
 /* 회원가입 */
 app.get('/signUp', function (request, response) {
   fs.readFile('signUp.html', 'utf8', function (error, data) {
@@ -139,7 +146,7 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
-app.get('/B01', function (request, response) {
+app.get('/138', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="분당"', function (error, results) {
       response.send(ejs.render(data, {
