@@ -248,9 +248,9 @@ for i in range(8,19):                                #지축역부터 오금역�
 count=0
 for i in range(len(station_name_final)):
     if i<9:
-        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"10"+str(i+1)+"\""+"\n")
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"10"+str(i+1)+","+"\n")
         count=count+4
     else:
-        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"1"+str(i+1)+"\""+"\n")
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"1"+str(i+1)+","+"\n")
         count=count+4
 driver.close()

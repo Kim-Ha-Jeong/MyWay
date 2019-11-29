@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import datetime
 
-driver=webdriver.Chrome('C:/Users/kha03/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
+driver=webdriver.Chrome('C:/Users/suzie/Downloads/chromedriver_win32/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
 
 dt = datetime.datetime.now()
 filename = '분당선' + dt.strftime("%Y_%m_%d")
@@ -123,9 +123,9 @@ for i in range(51,74):       #가천대부터 수원역까지
 count=0
 for i in range(len(station_name_final)):
     if i<9:
-        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"B0"+str(i+1)+"\""+"\n")
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"B0"+str(i+1)+","+"\n")
         count=count+4
     else:
-        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"B"+str(i+1)+"\""+"\n")
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"B"+str(i+1)+","+"\n")
         count=count+4
 driver.close()
