@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -137,7 +137,7 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
-app.get('/B01', function (request, response) {
+app.get('/138', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
       response.send(ejs.render(data, {

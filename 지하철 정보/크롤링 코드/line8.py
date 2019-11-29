@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import datetime
 
-driver=webdriver.Chrome('C:/Users/kha03/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
+driver=webdriver.Chrome('C:/Users/suzie/Downloads/chromedriver_win32/chromedriver.exe')     #크롬드라이버 깔고 chromedriver.exe위치 이것처럼 써넣어야함
 
 dt = datetime.datetime.now()
 filename = '8호선' + dt.strftime("%Y_%m_%d")
@@ -39,7 +39,13 @@ for i in range(11,28):                                  #종착부터 천호역,
 
 count=0
 for i in range(len(station_name_final)):
-    f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+"\n")
-    count=count+4
+    if i<9:
+        st="80"+str(i+1)
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+st+"\n")
+        count=count+4
+    else:
+        st="8"+str(i+1)
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+st+"\n")
+        count=count+4
 
 driver.close()
