@@ -17,7 +17,7 @@
 }
 /* 페이지 공통 */
 body{
-    background-color : #F1F5F8;
+    background-color : white;
 }
 
 img{
@@ -32,6 +32,7 @@ img{
 
 /* 전체 요소 틀 */
 #main-contain{
+    background-color:white;
     width : 67%;
     margin-top: 2%;
     margin-right: auto;
@@ -149,7 +150,7 @@ a:link,a:active,a:hover,a:visited{
 p{
     margin: auto;
     font-size: 0.7rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3%;
     color : #929292;
     font-family: 'Nanum-R';
 }
@@ -162,20 +163,3 @@ p.like{
     color : #727171;
 }
 
-/* 지하철 모양 */
-.button{
-    margin-bottom : 5%;
-    width : 133.8%;
-}
-
-.line_button{
-    width: 138%;
-    padding: 0;
-    margin: 0;
-    border : 0;
-    background : transparent;
-}
-
-.bar{
-    padding-left:0%!important;
-}

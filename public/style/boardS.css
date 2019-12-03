@@ -1,0 +1,56 @@
+/* 폰트 적용 */
+@font-face { 
+    font-family: 'Nanum-B'; 
+    src: url('/font/NanumSquareB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-EB'; 
+    src: url('/font/NanumSquareEB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-L'; 
+    src: url('/font/NanumSquareL.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-R'; 
+    src: url('/font/NanumSquareR.ttf'); 
+}
+/* 페이지 공통 */
+body{
+    background-color : #F1F5F8;
+}
+
+img{
+    width : 100%;
+}
+
+/* 로고 */
+#logo{
+    width : 20%;
+    margin: auto;   
+}
+.moreshow{
+    font-size : 1rem;
+    background-color : none;
+    color : #aaaaaa;
+    font-family : 'Nanum-R';
+    background-color: transparent !important;
+    border-color: transparent;
+    border: none;
+    width:100%;
+}
+
+.container-fluid{
+    background-color:#F1F5F8;
+    border-radius:10px;
+    padding-bottom:1%;
+}
+
+#title-row{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+hr{
+    margin: 2% 0;
+}

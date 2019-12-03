@@ -13,10 +13,6 @@
   <!-- Font Awesome -->
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
-  <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="/style/detail.css" type="text/css">
-
   <!--favicon-->
   <link rel="shortcut icon" href="/img/logo.png">
   <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -43,7 +39,15 @@
   <!--지하철 노선도 외부연결-->
   <script type="text/javascript">
     $(document).ready(function () {
-      $("#subwaypic").load("/html/subwaypic.html", function (data) {
+      $("#board").load("/boardS", function (data) {
+        var page = $(data).contents();
+      });
+    }); 
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#tag").load("/hashtag", function (data) {
         var page = $(data).contents();
       });
     }); 
@@ -89,33 +93,9 @@
       <p>#해쉬태그로검색해보세요 #화장실청결 #델리만쥬 #급똥 #생리대자판기</p>
     </div>
     <div class="row">
-      <div class="col-sm-4 bar">
-        <div class="card">
-          <div class="card-body">
-            <p style="margin-bottom:0;">나만의 MyWay를 더 편리하게 이용하는 방법!</p>
-            <button type="button" class="btn btn-light" onclick="location.href='/login'"
-              style="font-size:1rem">로그인</button>
-            <p class="like">
-              <a href="/signUp" style="font-size:0.85rem">회원가입</a>
-            </p>
-          </div>
-        </div>
+      <div class="col-sm-4 bar" id="board">
       </div>
-      <div class="col-sm-4 bar">
-        <div class="card">
-          <div class="card-body">
-            <p style="margin-bottom:0;">나만의 MyWay를 더 편리하게 이용하는 방법!</p>
-            <button type="button" class="btn btn-light" style="font-size:1rem"><%= data[0].화장실 %></button>
-            <button type="button" class="btn btn-light" style="font-size:1rem"><%= data[0].tagname %></button>
-            <form method="post">
-              <div class="row" id="searchrow">
-                <input type="text" name="stationName" placeholder="해시태그 등록">
-                <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
-                    alt="Responsive-image" class="img-fluid"></button>
-              </div>
-            </form>
-          </div>
-        </div>
+      <div class="col-sm-4 bar" id="tag">
       </div>
       <div class="col-sm-4 bar">
         <div class="card">
@@ -131,5 +111,6 @@
       </div>
     </div>
 </body>
+<link rel="stylesheet" href="/style/detail.css" type="text/css">
 
 </html>
