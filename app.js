@@ -103,7 +103,6 @@ app.post('/login', function (request, response) {
           } else {
               response.send('no data');
           }
-
       } else {
           response.send('error : ' + err);
       }
@@ -137,7 +136,7 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
-app.get('/B01', function (request, response) {
+app.get('/138', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
       response.send(ejs.render(data, {
@@ -146,6 +145,7 @@ app.get('/B01', function (request, response) {
     });
   });
 });
+
 
 /* 게시판 화면*/
 app.get('/board', function (request, response) {
@@ -172,6 +172,16 @@ app.get('/board/:num', function (request, response) {
   });
 });
 
+app.get('/boardS', function (request, response) {
+  fs.readFile('boardS.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
 app.get('/insert', function (request, response) {
   fs.readFile('boardInsert.html', 'utf8', function (error, data) {
     response.send(data);
@@ -184,5 +194,15 @@ app.post('/insert', function (request, response) {
       body.title, body.description
   ], function () {
     response.redirect('/board');
+  });
+});
+
+app.get('/hashtag', function (request, response) {
+  fs.readFile('hashtag.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
   });
 });
