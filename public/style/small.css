@@ -64,6 +64,32 @@ div.tag{
     background-color:white;
     font-size : 0.7rem;
     width : fit-content;
-    float: left;
-    width : 33%;
+    display : inline-block;
+}
+
+div.tag-wrapper{
+    text-align : center;
+}
+
+#tagbox{
+    border : 2px solid #00A4FF;
+    width : 100%;
+    margin:auto;
+}
+
+#tagInput{
+    font-size : 9px;
+    width:90%;
+}
+
+#tagButton{
+    font-size: 9px;
+    padding: 0;
+    width: 10%;
+    color: white;
+    font-family: 'Nanum-B';
+}
+
+.btn{
+    background-color:#00A4FF;
 }

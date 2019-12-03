@@ -206,3 +206,12 @@ app.get('/hashtag', function (request, response) {
     });
   });
 });
+
+app.post('/hashtag', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+      tagName
+  ], function () {
+    response.redirect('/hashtag');
+  });
+});
