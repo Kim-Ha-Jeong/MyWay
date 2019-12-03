@@ -29,24 +29,18 @@
 
         <hr style="margin-top:0;"></hr>
         <% data.reverse() 
-                            for(var i = 0; i < 4 ; i++){ %>
+                            for(var i = 0; i < 3 ; i++){ %>
                     <div class="tag"><%= data[i].title %></div>
                 
         <% } %>
         <hr>
 
         </hr>
-        <div class="tag-wrapper">
-            <% data.reverse() 
-                            for(var i = 0; i < 9 ; i++){ %>
-            <div class="tag">#<%= data[i].title %></div>
 
-            <% } %>
-        </div>
         <hr>
         </hr>
         <div id="tag-wrapper">
-            <form method="post">
+            <form method="post" action="/138H">
                 <div class="row" id="tagbox">
                     <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
                     <button class="btn btn-light" id="tagButton" type="submit" action="/hashtag">등록</button>
