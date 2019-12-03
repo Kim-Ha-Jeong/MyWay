@@ -316,6 +316,18 @@ app.get('/information', function (request, response) {
   });
 });
 
+
+app.post('/hashtag', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+      tagName
+  ], function () {
+    response.redirect('/hashtag');
+
+    });
+  });
+
+
 app.get('/signInfo', function (request, response) {
   fs.readFile('signInfo.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
