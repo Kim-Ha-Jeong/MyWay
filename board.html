@@ -28,14 +28,15 @@
     <p class="title">실시간 지하철 수다</p>
     <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
     <div class="container" id="main-contain">
-      <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
-            남기기</button>
+      <form method="post">
+        <div class="row" id="searchrow">
+            <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
+            <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
+                    alt="Responsive-image" class="img-fluid"></button>
         </div>
-      </div>
+    </form>
       <% data.reverse().forEach(function (item, index) { %>
-      <div class="row">
+      <div class="row" id="<%= item.num %>">
         <div class="card">
           <div class="card-body">
             <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
@@ -50,6 +51,12 @@
       </div>
 
       <% }); %>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
+            남기기</button>
+        </div>
+      </div>
 
     </div>
   </div>
