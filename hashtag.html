@@ -26,6 +26,8 @@
         <div class="row">
             <p class="sub-title">해시태그로 역 리뷰를 남겨주세요</p>
         </div>
+<<<<<<< HEAD
+=======
 
         <hr style="margin-top:0;"></hr>
         <% data.reverse() 
@@ -36,6 +38,14 @@
         <hr>
 
         </hr>
+<<<<<<< HEAD
+=======
+>>>>>>> 74932a86911d4c17c5393577f5e4c62bebf49037
+        <div class="tag-wrapper">
+            <% data.reverse() 
+                            for(var i = 0; i < 9 ; i++){ %>
+            <div class="tag">#<%= data[i].title %></div>
+>>>>>>> c3f69d0f59d290f02312561c8de2b9e4faaa8ecc
 
         <hr>
         </hr>
@@ -43,7 +53,7 @@
             <form method="post" action="/138H">
                 <div class="row" id="tagbox">
                     <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
-                    <button class="btn btn-light" id="tagButton" type="submit" action="/hashtag">등록</button>
+                    <button class="btn btn-light" id="tagButton" type="submit">등록</button>
                 </div>
             </form>
         </div>
