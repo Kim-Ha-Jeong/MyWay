@@ -136,6 +136,25 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
+app.get('/138H', function (request, response) {
+  fs.readFile('suwon.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/138H', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+      tagName
+  ], function () {
+    response.redirect('/138#');
+  });
+});
+
 app.get('/138', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
@@ -207,11 +226,3 @@ app.get('/hashtag', function (request, response) {
   });
 });
 
-app.post('/hashtag', function (request, response) {
-  var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
-      tagName
-  ], function () {
-    response.redirect('/hashtag');
-  });
-});
