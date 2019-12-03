@@ -54,3 +54,16 @@ img{
 hr{
     margin: 2% 0;
 }
+
+p.sub-title{
+    margin: 0 0 1% 5%;
+}
+
+div.tag{
+    font-family : 'Nanum-B';
+    background-color:white;
+    font-size : 0.7rem;
+    width : fit-content;
+    float: left;
+    width : 33%;
+}
