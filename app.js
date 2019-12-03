@@ -146,6 +146,23 @@ app.get('/138', function (request, response) {
   });
 });
 
+app.post('/138', function(request, response){
+  var stationName = request.body['stationName'];
+  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/"+rows[0]['num']);
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
 
 /* 게시판 화면*/
 app.get('/board', function (request, response) {
