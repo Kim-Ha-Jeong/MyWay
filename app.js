@@ -206,3 +206,13 @@ app.get('/hashtag', function (request, response) {
     });
   });
 });
+
+app.get('/information', function (request, response) {
+  fs.readFile('information.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
