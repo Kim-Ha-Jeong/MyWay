@@ -15,19 +15,21 @@
     <!-- Font Awesome -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="style/boardS.css">
+    <link rel="stylesheet" href="style/small.css">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row" id="title-row">
-            <h5 class="title">실시간 인기 글</h5>
-            <p>다른 지하철에서 일어나고 있는 일들을 살펴보세요!</p>
+            <h5 class="title">#후기태그</h5>
+        </div>
+        <div class="row">
+            <p class="sub-title">해시태그로 역 리뷰를 남겨주세요</p>
         </div>
         <hr style="margin-top:0;"></hr>
         <% data.reverse() 
                             for(var i = 0; i < 9 ; i++){ %>
-                    <h5 class="card-title"><%= data[i].title %></h5>
+                    <div class="tag"><%= data[i].title %></div>
                 
         <% } %>
         <hr>
