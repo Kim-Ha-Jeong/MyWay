@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -146,6 +146,23 @@ app.get('/138', function (request, response) {
   });
 });
 
+app.post('/138', function(request, response){
+  var stationName = request.body['stationName'];
+  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/"+rows[0]['num']);
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
 
 /* 게시판 화면*/
 app.get('/board', function (request, response) {
@@ -207,11 +224,21 @@ app.get('/hashtag', function (request, response) {
   });
 });
 
+
+app.get('/information', function (request, response) {
+  fs.readFile('information.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+
 app.post('/hashtag', function (request, response) {
   var tagName = request.body['tagName'];
   db.query('INSERT INTO tag (title) VALUES (?)', [
       tagName
   ], function () {
     response.redirect('/hashtag');
+
   });
 });

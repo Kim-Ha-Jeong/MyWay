@@ -21,39 +21,29 @@
 <body>
     <div class="container-fluid">
         <div class="row" id="title-row">
-            <h5 class="title">#후기태그</h5>
+            <h5 class="title">역 정보</h5>
         </div>
         <div class="row">
-            <p class="sub-title">해시태그로 역 리뷰를 남겨주세요</p>
+            <p class="sub-title">역의 기본 정보를 확인하세요!</p>
         </div>
-
         <hr style="margin-top:0;"></hr>
         <% data.reverse() 
-                            for(var i = 0; i < 4 ; i++){ %>
-                    <div class="tag"><%= data[i].title %></div>
-                
-        <% } %>
-        <hr>
-
-        </hr>
-        <div class="tag-wrapper">
-            <% data.reverse() 
-                            for(var i = 0; i < 9 ; i++){ %>
-            <div class="tag">#<%= data[i].title %></div>
-
-            <% } %>
-        </div>
-        <hr>
-        </hr>
-        <div id="tag-wrapper">
-            <form method="post">
-                <div class="row" id="tagbox">
-                    <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
-                    <button class="btn btn-light" id="tagButton" type="submit" action="/hashtag">등록</button>
+                for(var i = 0; i < 1 ; i++){ %>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">플랫폼: <%= data[i].플랫폼 %></p>
+                            <p class="card-text">내리는 문: <%= data[i].내리는문 %></p>
+                            <p class="card-text">화장실: <%= data[i].화장실 %></p>
+                            <p class="card-text">반대편 횡단: <%= data[i].반대편횡단 %></p>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
-        
+                <% } %>
+        <hr>
+        </hr>
+        <hr>
+        </hr>
     </div>
     </div>
 </body>
