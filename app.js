@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '111111',
+  password: '1234',
   database: 'MyWay'
 });
 db.connect();
@@ -212,7 +212,7 @@ app.get('/138', function (request, response) {
   });
 });
 
-app.post('/138', function(request, response){
+app.post('/138', function (request, response) {
   var stationName = request.body['stationName'];
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
@@ -238,6 +238,22 @@ app.get('/board', function (request, response) {
         data: results
       }));
     });
+  });
+});
+
+app.post('/board', function(request, response){
+  var search = request.body['search'];
+  db.query('select * from board where title like ? or description like ?',["%"+search+"%","%"+search+"%"], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/board#"+rows[0]['num']);
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
   });
 });
 
@@ -289,7 +305,6 @@ app.get('/hashtag', function (request, response) {
     });
   });
 });
-
 
 app.get('/information', function (request, response) {
   fs.readFile('information.html', 'utf8', function (error, data) {
