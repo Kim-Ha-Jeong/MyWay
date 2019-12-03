@@ -20,30 +20,16 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row" id="title-row">
-            <h5 class="title">#후기태그</h5>
-        </div>
         <div class="row">
-            <p class="sub-title">해시태그로 역 리뷰를 남겨주세요</p>
-        </div>
-        <div class="tag-wrapper">
-            <% data.reverse() 
-                            for(var i = 0; i < 12 ; i++){ %>
-            <div class="tag">#<%= data[i].title %></div>
-
-            <% } %>
-        </div>
-        <hr>
-        </hr>
-        <div id="tag-wrapper">
-            <form method="post" action="/138H">
-                <div class="row" id="tagbox">
-                    <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
-                    <button class="btn btn-light" id="tagButton" type="submit">등록</button>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text"><%= data[0].name %></p>
+                    <p class="card-text"><%= data[0].id %></p>
+                    <p class="card-text"><%= data[0].email %></p>
+                    <p class="card-text"><%= data[0].phone %></p>
                 </div>
-            </form>
+            </div>
         </div>
-        
     </div>
     </div>
 </body>
