@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '1234',
+  password: '111111',
   database: 'MyWay'
 });
 db.connect();
@@ -243,8 +243,6 @@ app.get('/hashtag', function (request, response) {
   });
 });
 
-<<<<<<< HEAD
-=======
 
 app.get('/information', function (request, response) {
   fs.readFile('information.html', 'utf8', function (error, data) {
@@ -261,6 +259,7 @@ app.post('/hashtag', function (request, response) {
   ], function () {
     response.redirect('/hashtag');
 
+    });
   });
 });
->>>>>>> 74932a86911d4c17c5393577f5e4c62bebf49037
+});
