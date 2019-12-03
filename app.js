@@ -139,7 +139,7 @@ app.post('/dropOut', function(request,response,next){
 
 app.get('/138', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1" UNION ALL SELECT * FROM hashtag where station="수원" ', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
