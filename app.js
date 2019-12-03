@@ -9,7 +9,7 @@ var router = express.Router();
 var db = mysql.createConnection({
   user: 'root',
   port : 3306,
-  password: '1234',
+  password: '111111',
   database: 'MyWay'
 });
 db.connect();
@@ -29,6 +29,9 @@ app.use(express.static('js'));
 app.listen(3000, function () {
   console.log('server running at localhost:3000');
 });
+
+var userId;
+var userPw;
 
 /* 홈 */
 app.get('/', function (request, response) {
@@ -88,8 +91,8 @@ app.get('/login', function (request, response) {
 });
 
 app.post('/login', function (request, response) {
-  var userId = request.body['userId'];
-  var userPw = request.body['userPw'];
+  userId = request.body['userId'];
+  userPw = request.body['userPw'];
   db.query('select * from sign where id=? and password=?',[userId,userPw], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
@@ -98,7 +101,7 @@ app.post('/login', function (request, response) {
                   'pw : ' + rows[0]['password']+'<br>'+
                   'name : '+rows[0]['name']);
             */
-              response.redirect('/');
+              response.redirect('/homeLogin');
 
           } else {
               response.send('no data');
@@ -108,6 +111,49 @@ app.post('/login', function (request, response) {
       }
   });
 });
+
+app.get('/user', function (request, response) {
+  fs.readFile('user.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/homeLogin', function (request, response) {
+  fs.readFile('homeLogin.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/homeLogin', function (request, response) {
+  var stationName = request.body['stationName'];
+  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+            /*
+              response.send('id : ' + rows[0]['id'] + '<br>' +
+                  'pw : ' + rows[0]['password']+'<br>'+
+                  'name : '+rows[0]['name']);
+            */
+              response.redirect("/"+rows[0]['num']);
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
 
 app.get('/dropOut', function (request, response) {
   fs.readFile('dropOut.html', 'utf8', function (error, data) {
@@ -135,6 +181,7 @@ app.post('/dropOut', function(request,response,next){
     }
   });
 })
+
 
 app.get('/138H', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
@@ -243,8 +290,6 @@ app.get('/hashtag', function (request, response) {
   });
 });
 
-<<<<<<< HEAD
-=======
 
 app.get('/information', function (request, response) {
   fs.readFile('information.html', 'utf8', function (error, data) {
@@ -253,14 +298,15 @@ app.get('/information', function (request, response) {
         data: results
       }));
     });
-
-app.post('/hashtag', function (request, response) {
-  var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
-      tagName
-  ], function () {
-    response.redirect('/hashtag');
-
   });
 });
->>>>>>> 74932a86911d4c17c5393577f5e4c62bebf49037
+
+app.get('/signInfo', function (request, response) {
+  fs.readFile('signInfo.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});

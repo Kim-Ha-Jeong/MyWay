@@ -57,7 +57,7 @@ img{
 /* 검색창 관련 */
 #fakebox{
     background-color : white;
-    width: 30%;
+    width: 50%;
     margin: auto;
     border : 5px solid #00A4FF;
     border-radius : 20px;
@@ -198,4 +198,8 @@ p.like{
     border-color: transparent;
     border: none;
     width:100%;
+}
+
+button:focus {
+    outline: none;
 }
