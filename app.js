@@ -289,8 +289,8 @@ app.get('/insert', function (request, response) {
 
 app.post('/insert', function (request, response) {
   var body = request.body;
-  db.query('INSERT INTO board (title, description) VALUES (?, ?)', [
-      body.title, body.description
+  db.query('INSERT INTO board (title, description, type) VALUES (?, ?, ?)', [
+      body.title, body.description, body.type
   ], function () {
     response.redirect('/board');
   });
