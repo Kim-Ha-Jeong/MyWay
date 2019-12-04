@@ -18,6 +18,8 @@
   <!-- Font Awesome -->
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <script src="/js/button.js"></script>
 </head>
 
 <body>
@@ -29,16 +31,21 @@
     <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
     <div class="container" id="main-contain">
       <form method="post">
-        <div class="row">
-            <input type="text" id="searchrow" name="search" placeholder="실시간 상황을 검색하세요!">
-            <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
-                class="img-fluid"></button>
-            <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
-              남기기</button>
+        <div class="row" id="searchrow">
+          <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
+          <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
+              class="img-fluid"></button>
+          <select name="type" id="typeselect" onchange='select()'>
+            <option value="전체">전체</option>
+            <option value="잡담">잡담</option>
+            <option value="정보">정보</option>
+            <option value="긴급">긴급</option>
+          </select>
         </div>
-    <% data.reverse().forEach(function (item, index) {
-      if (item.type == "정보") { %>
-        <div class="row">
+    </form>
+      </div>
+      <% data.reverse().forEach(function (item, index) { %>
+        <div class="row" id="<%= item.type %>" name="글">
           <div class="card">
             <div class="card-body">
               </br>
@@ -51,11 +58,15 @@
             </div>
           </div>
         </div>
-      <% }
-    }); %>
-  </div>
-</div>
-
+        <% }); %>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
+            남기기</button>
+        </div>
+      </div>
+    </div>
+>>>>>>> eca014ae6b20454b4cd219b5152e9edacaa6804f
 </body>
 
 </html>
