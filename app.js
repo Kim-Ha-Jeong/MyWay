@@ -108,7 +108,7 @@ app.post('/login', function (request, response) {
       }
   });
 });
-
+/*마이페이지*/
 app.get('/user', function (request, response) {
   fs.readFile('user.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
@@ -209,7 +209,7 @@ app.get('/138', function (request, response) {
   });
 });
 
-app.post('/138', function(request, response){
+app.post('/138', function (request, response) {
   var stationName = request.body['stationName'];
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
@@ -248,13 +248,21 @@ app.get('/board/like', function (request, response) {
   });
 });
 
-app.post('/board/like', function (request, response) {
-  var body = request.body;
-  db.query('update board set love=love+1 where num=?', [
-      body.like
-  ], function () {
-    console.log(body.like);
-    response.redirect('/board/like');
+
+app.post('/board', function(request, response){
+  var search = request.body['search'];
+  db.query('select * from board where title like ? or description like ?',["%"+search+"%","%"+search+"%"], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/board#"+rows[0]['num']);
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+
   });
 });
 
@@ -290,8 +298,8 @@ app.get('/insert', function (request, response) {
 
 app.post('/insert', function (request, response) {
   var body = request.body;
-  db.query('INSERT INTO board (title, description) VALUES (?, ?)', [
-      body.title, body.description
+  db.query('INSERT INTO board (title, description, type) VALUES (?, ?, ?)', [
+      body.title, body.description, body.type
   ], function () {
     response.redirect('/board');
   });
@@ -307,7 +315,6 @@ app.get('/hashtag', function (request, response) {
   });
 });
 
-
 app.get('/information', function (request, response) {
   fs.readFile('information.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
@@ -317,6 +324,18 @@ app.get('/information', function (request, response) {
     });
   });
 });
+
+
+app.post('/hashtag', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+      tagName
+  ], function () {
+    response.redirect('/hashtag');
+
+    });
+  });
+
 
 app.get('/signInfo', function (request, response) {
   fs.readFile('signInfo.html', 'utf8', function (error, data) {
