@@ -18,10 +18,12 @@
   <!-- Font Awesome -->
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <script src="/js/button.js"></script>
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
     </div>
@@ -30,14 +32,20 @@
     <div class="container" id="main-contain">
       <form method="post">
         <div class="row" id="searchrow">
-            <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
-            <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
-                    alt="Responsive-image" class="img-fluid"></button>
+          <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
+          <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
+              class="img-fluid"></button>
+          <select name="type" id="typeselect" onchange='select()'>
+            <option value="전체">전체</option>
+            <option value="잡담">잡담</option>
+            <option value="정보">정보</option>
+            <option value="긴급">긴급</option>
+          </select>
         </div>
-<<<<<<< HEAD
+    </form>
       </div>
-      <% data.reverse().forEach(function (item, index) { if (item.type == "잡담") { %>
-        <div class="row">
+      <% data.reverse().forEach(function (item, index) { %>
+        <div class="row" id="<%= item.type %>" name="글">
           <div class="card">
             <div class="card-body">
             </br>
@@ -49,20 +57,14 @@
             </div>
           </div>
         </div>
-        <% }}); %>
-        
+        <% }); %>
       <div class="row">
         <div class="col">
           <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
             남기기</button>
         </div>
       </div>
-
     </div>
-  </div>
-
-  </div>
-
 </body>
 
 </html>

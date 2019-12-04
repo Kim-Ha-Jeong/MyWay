@@ -111,7 +111,7 @@ app.post('/login', function (request, response) {
       }
   });
 });
-
+/*마이페이지*/
 app.get('/user', function (request, response) {
   fs.readFile('user.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
