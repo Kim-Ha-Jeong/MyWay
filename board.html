@@ -34,7 +34,7 @@
         <div class="row" id="searchrow">
           <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
           <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
-              class="img-fluid"></button>
+              class="img-fluid" onclick='search()'></button>
           <select name="type" id="typeselect" onchange='select()'>
             <option value="전체">전체</option>
             <option value="잡담">잡담</option>
@@ -55,6 +55,7 @@
               <p class="content" id="c1"><%= item.created %></p>
               <p class="card-text"><%= item.description %></p></br>
             </div>
+            <button type="button" class="btn btn-light">좋아요<%= item.love %></button>
           </div>
         </div>
         <% }); %>
