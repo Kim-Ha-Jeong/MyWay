@@ -18,6 +18,8 @@
   <!-- Font Awesome -->
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <script src="/js/button.js"></script>
 </head>
 
 <body>
@@ -30,26 +32,31 @@
     <div class="container" id="main-contain">
       <form method="post">
         <div class="row" id="searchrow">
-            <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
-            <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
-                    alt="Responsive-image" class="img-fluid"></button>
+          <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
+          <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
+              class="img-fluid"></button>
+          <select name="type" id="typeselect" onchange="type()">
+            <option value="전체">전체</option>
+            <option value="잡담">잡담</option>
+            <option value="정보">정보</option>
+            <option value="긴급">긴급</option>
+          </select>
         </div>
-    </form>
-      <% data.reverse().forEach(function (item, index) { %>
-      <div class="row" id="<%= item.num %>">
-        <div class="card">
-          <div class="card-body">
-            <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
-            <h5 class="card-title"><%= item.title %></h5>
-            <hr>
-            </hr>
-            <p class="content" id="c1"><%= item.created %></p>
-            <p class="card-text"><%= item.description %></p>
-            <p class="content" id="c1">추천 1367 댓글 25</p>
+      </form>
+        <% data.reverse().forEach(function (item, index) { %>
+        <div class="row" id="<%= item.type %>">
+          <div class="card">
+            <div class="card-body">
+              <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
+              <h5 class="card-title"><%= item.title %></h5>
+              <hr>
+              </hr>
+              <p class="content" id="c1"><%= item.created %></p>
+              <p class="card-text"><%= item.description %></p>
+              <button type="submit">좋아요</button>
+            </div>
           </div>
         </div>
-      </div>
-
       <% }); %>
       <div class="row">
         <div class="col">
@@ -60,9 +67,7 @@
 
     </div>
   </div>
-
-  </div>
-
+  
 </body>
 
 </html>

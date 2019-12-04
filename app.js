@@ -111,7 +111,7 @@ app.post('/login', function (request, response) {
       }
   });
 });
-
+/*마이페이지*/
 app.get('/user', function (request, response) {
   fs.readFile('user.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM sign where id=? and password=?',[userId,userPw], function (error, results) {
@@ -289,8 +289,8 @@ app.get('/insert', function (request, response) {
 
 app.post('/insert', function (request, response) {
   var body = request.body;
-  db.query('INSERT INTO board (title, description) VALUES (?, ?)', [
-      body.title, body.description
+  db.query('INSERT INTO board (title, description, type) VALUES (?, ?, ?)', [
+      body.title, body.description, body.type
   ], function () {
     response.redirect('/board');
   });
