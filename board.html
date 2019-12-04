@@ -35,7 +35,7 @@
         </div>
       </div>
       <% data.reverse().forEach(function (item, index) { %>
-      <div class="row" id="<%= item.num %>">
+      <div class="row">
         <div class="card">
           <div class="card-body">
             <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
@@ -44,7 +44,10 @@
             </hr>
             <p class="content" id="c1"><%= item.created %></p>
             <p class="card-text"><%= item.description %></p>
-            <p class="content" id="c1">추천 1367 댓글 25</p>
+            <form method="post" action="/board/like">
+              <button type="submit" class="btn btn-light" name="<%= item.num %>">
+                좋아요&nbsp;<%= item.love %></button>
+              </form>
           </div>
         </div>
       </div>
