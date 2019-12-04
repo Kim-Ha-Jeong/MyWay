@@ -42,19 +42,18 @@
             <option value="긴급">긴급</option>
           </select>
         </div>
-      </form>
-        <% data.reverse().forEach(function (item, index) { %>
-        <div class="row" id="<%= item.type %>">
-          <div class="card">
-            <div class="card-body">
-              <p class="content" style="color : #00A4FF; font-size : 1rem;"><%= item.num %></p>
-              <h5 class="card-title"><%= item.title %></h5>
-              <hr>
-              </hr>
-              <p class="content" id="c1"><%= item.created %></p>
-              <p class="card-text"><%= item.description %></p>
-              <button type="submit">좋아요</button>
-            </div>
+    </form>
+      <% data.reverse().forEach(function (item, index) { %>
+      <div class="row" id="<%= item.num %>">
+        <div class="card">
+          <div class="card-body">
+          </br>
+            <p><h5 class="card-title">[<%= item.type %>] <%= item.title %></h5></p>
+            
+            <hr>
+            </hr>
+            <p class="content" id="c1"><%= item.created %></p>
+            <p class="card-text"><%= item.description %></p></br>
           </div>
         </div>
       <% }); %>
