@@ -267,16 +267,12 @@ app.post('/board', function(request, response){
   });
 });
 
-/* 게시판 글 상세보기 */
-app.get('/board/:num', function (request, response) {
-  //파일 읽기
-  fs.readFile('boardPost.html', 'utf8', function (error, data) {
-    //데이터베이스 쿼리 실행
-    db.query('SELECT * FROM board WHERE num=?', [request.params.num], function (error, results) {
-      //응답
-      response.send(ejs.render(data, {
-        data: results
-      }));
+app.get('/board/edit/:id', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('update board set love=love+1 WHERE num = ?', [
+        request.params.id
+    ], function (error, result) {
+      response.redirect("/board");
     });
   });
 });
