@@ -2,17 +2,19 @@ var fs = require('fs');
 var ejs = require('ejs');
 var express = require('express');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
+const md5 = require('md5');
 var router = express.Router();
 
 /* mysql 연결 */
+
+var mysql = require('mysql');
 var db = mysql.createConnection({
-  user: 'root',
-  port : 3306,
-  password: '1234',
-  database: 'MyWay'
-});
-db.connect();
+    user: 'root',
+    port : 3306,
+    password: '111111',
+    database: 'MyWay'
+  });
+  db.connect();
 
 var app = express();
 app.use(bodyParser.urlencoded({
@@ -76,7 +78,7 @@ app.get('/signUp', function (request, response) {
 app.post('/signUp', function (request, response) {
   var body = request.body;
   db.query('INSERT INTO sign (id, password, email, name, phone) VALUES (?, ?, ?, ?, ?)', [
-      body.id, body.password, body.email, body.name, body.phone
+      body.id, md5(body.password), body.email, body.name, body.phone
   ], function () {
     response.redirect('/');
   });
@@ -92,15 +94,10 @@ app.get('/login', function (request, response) {
 
 app.post('/login', function (request, response) {
   userId = request.body['userId'];
-  userPw = request.body['userPw'];
+  userPw = md5(request.body['userPw']);
   db.query('select * from sign where id=? and password=?',[userId,userPw], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
-            /*
-              response.send('id : ' + rows[0]['id'] + '<br>' +
-                  'pw : ' + rows[0]['password']+'<br>'+
-                  'name : '+rows[0]['name']);
-            */
               response.redirect('/homeLogin');
 
           } else {
@@ -241,6 +238,17 @@ app.get('/board', function (request, response) {
   });
 });
 
+app.get('/board/like', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+
 app.post('/board', function(request, response){
   var search = request.body['search'];
   db.query('select * from board where title like ? or description like ?',["%"+search+"%","%"+search+"%"], function (err, rows, fields) {
@@ -254,6 +262,7 @@ app.post('/board', function(request, response){
       } else {
           response.send('error : ' + err);
       }
+
   });
 });
 
@@ -337,3 +346,4 @@ app.get('/signInfo', function (request, response) {
     });
   });
 });
+
