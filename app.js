@@ -9,12 +9,13 @@ var router = express.Router();
 
 var mysql = require('mysql');
 var db = mysql.createConnection({
-    user: 'root',
-    port : 3306,
-    password: '111111',
-    database: 'MyWay'
-  });
-  db.connect();
+
+  user: 'root',
+  port : 3306,
+  password: '111111',
+  database: 'MyWay'
+});
+db.connect();
 
 var app = express();
 app.use(bodyParser.urlencoded({
