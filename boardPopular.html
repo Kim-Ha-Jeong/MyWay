@@ -45,8 +45,8 @@
       </form>
     </div>
     <% data.reverse().forEach(function (item, index) { %>
-    <div class="row" id="<%= item.type %>" name='글'>
-      <div class="card" name='like' id=<%= item.love %> >
+    <div class="row" id="<%= item.type %>" name="글">
+      <div class="card">
         <div class="card-body">
           </br>
           <p>
@@ -68,34 +68,7 @@
           남기기</button>
       </div>
     </div>
-    <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-light" style="float: right" onclick="order()">인기순</button>
-        </div>
-      </div>
   </div>
 </body>
-<script>
-  var x = new Array();
-  var all = document.getElementsByName('like');
-  for(var i=0;i<6;i++){
-    x[i] = all[i].id;
-  }
-  function order(){
-    for(var i=0;i<6;i++){
-      all[i].style.display="none";
-    }
-    x.sort(function(a,b){
-      return b-a;
-    });
-    
-    for(var j=0;j<6;j++){
-      for(var i=11;i>=0;i--){
-          if(x[i]==all[j].id){
-            all[j].style.display="block";
-          }
-      }
-    }
-  }
-</script>
+
 </html>
