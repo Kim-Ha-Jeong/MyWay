@@ -1,9 +1,9 @@
+
 var selectedValue="전체";
 function select() {
   selectedValue="전체";
   var selected=document.getElementById('typeselect');
   selectedValue = selected.options[selected.selectedIndex].text;
-  console.log(selectedValue);
   var all=document.getElementsByName('글');
   if(selectedValue=="전체"){
     for(var i=0;i<all.length;i++){
@@ -43,6 +43,19 @@ function select() {
   
 }
 
-function search(){
-  
+function buttonsearch(){
+  var text=document.getElementById("input").value;
+  var all=document.getElementsByName('글');
+  var getTitle=document.getElementsByName('title');
+  var getDesc=document.getElementsByName('desc');
+  for(var i=0;i<getTitle.length;i++){
+    var title=getTitle[i].innerHTML;
+    var desc=getDesc[i].innerHTML;
+    if((text==title)||(text==desc)){
+      all[i].style.display="block";
+    }
+    else{
+      all[i].style.display="none";
+    }
+  }
 }

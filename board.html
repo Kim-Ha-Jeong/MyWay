@@ -32,9 +32,9 @@
     <div class="container" id="main-contain">
       <form method="post">
         <div class="row" id="searchrow">
-          <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
-          <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
-              class="img-fluid" onclick='search()'></button>
+          <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
+          <button id="searchbutton" type="button" onclick="buttonsearch()"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
+              class="img-fluid" ></button>
           <select name="type" id="typeselect" onchange='select()'>
             <option value="전체">전체</option>
             <option value="잡담">잡담</option>
@@ -50,11 +50,11 @@
             <div class="card-body">
               </br>
               <p>
-                <h5 class="card-title">[<%= item.type %>] <%= item.title %></h5>
+                <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
               </p>
               <hr></hr>
               <p class="content" id="c1"><%= item.created %></p>
-              <p class="card-text"><%= item.description %></p></br>
+              <p class="card-text" name="desc"><%= item.description %></p></br>
             </div>
             <button type="button" class="btn btn-light">좋아요<%= item.love %></button>
           </div>
