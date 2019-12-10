@@ -100,3 +100,51 @@ div.tag-wrapper{
     border-radius: 0.5rem;
     border: 0;
 }
+
+/* 틀 줄이기 */
+.container-fluid{
+    margin-top : 7%;
+    width : 30%;
+}
+
+/* 로고 이미지 */
+img{
+    width : 55%;
+    margin : auto;
+    margin-bottom : 3%;
+}
+
+/* label */
+p{
+    margin-bottom: 0.5%;
+    font-size : 0.7rem;
+}
+
+/* input 부모 태그 */
+div.content{
+    width : 100%;
+    margin-bottom : 6%;
+    text-align: center;
+}
+
+/* input(입력 받는 상자) */
+input{
+    width : 60%;
+    height : 120%;
+    border : 0.8px solid #00A4FF;
+    border-radius : 7px;
+    font-size : 0.6rem;
+    padding : 1% 0 1% 3%;
+    color : black;
+}
+
+/* 버튼 */
+.btn{
+    width : 100%;
+    font-size : 0.9rem;
+    background-color : #00A4FF;
+    color : white;
+    margin-top : 2%;
+    border : 7px;
+    font-family : 'Nanum-B';
+}
