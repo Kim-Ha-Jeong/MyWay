@@ -21,17 +21,40 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-text"><%= data[0].name %></p>
-                    <p class="card-text"><%= data[0].id %></p>
-                    <p class="card-text"><%= data[0].email %></p>
-                    <p class="card-text"><%= data[0].phone %></p>
-                </div>
+            <img src="/img/logo.png" class="img-fluid" alt="Responsive image">
+        </div>   
+        <div class="container">
+        <form method="post">
+          <fieldset>
+            <div class="row">
+                <p style="font-size:1rem">아이디 <%= data[0].name %></p>
             </div>
+    
+            <div class="row">
+                <p style="font-size:1rem">비밀번호
+                <input type="text" name="password" placeholder="새로운 비밀번호를 입력하세요."/></p>
+            </div>
+    
+            <div class="row">
+                <p style="font-size:1rem">이메일 <%= data[0].name %></p>
+            </div>
+            
+            <div class="row">
+                <p style="font-size:1rem">이름 <%= data[0].name %></p>
+            </div>
+    
+            <div class="row">
+                <p style="font-size:1rem">전화번호 <%= data[0].name %></p>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-light" style="font-size:1.1rem">정보수정하기</button>
+            </div>
+         
+        </fieldset>
+        </form>
         </div>
-    </div>
-    </div>
+        </div>
 </body>
 
 </html>
