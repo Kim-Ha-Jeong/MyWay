@@ -298,7 +298,7 @@ app.get('/insert', function (request, response) {
 
 app.post('/insert', function (request, response) {
   var body = request.body;
-  db.query('INSERT INTO board (title, description, type) VALUES (?, ?, ?)', [
+  db.query('INSERT INTO board (title, description, love,type) VALUES (?, ?,0, ?)', [
       body.title, body.description, body.type
   ], function () {
     response.redirect('/board');

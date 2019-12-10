@@ -20,6 +20,16 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
   <script src="/js/button.js"></script>
+  <script>
+      var x = new Array();
+      for(i=0;i<100;i++){
+        x[i]=0;
+      }
+      function love(clicked_id){
+        x[clicked_id] += 1;
+        document.getElementById(clicked_id).innerHTML = "좋아요 "+x[clicked_id];
+      }
+    </script>
 </head>
 
 <body>
@@ -42,6 +52,7 @@
             <option value="긴급">긴급</option>
           </select>
         </div>
+<<<<<<< HEAD
     </form>
       </div>
       <% data.reverse().forEach(function (item, index) { %>
@@ -64,9 +75,35 @@
         <div class="col">
           <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
             남기기</button>
+=======
+      </form>
+    </div>
+    <% data.reverse().forEach(function (item, index) { %>
+    <div class="row" id="<%= item.type %>" name="글">
+      <div class="card">
+        <div class="card-body">
+          </br>
+          <p>
+            <h5 class="card-title">[<%= item.type %>] <%= item.title %></h5>
+          </p>
+          <hr>
+          </hr>
+          <p class="content" id="c1"><%= item.created %></p>
+          <p class="card-text"><%= item.description %></p></br>
+          <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="love(this.id)">좋아요 0</button>
+
+>>>>>>> 27e43758a1592f0eb969104eacb5455ba844ade9
         </div>
       </div>
     </div>
+    <% }); %>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
+          남기기</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
