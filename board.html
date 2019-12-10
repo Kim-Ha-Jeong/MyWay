@@ -20,16 +20,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
   <script src="/js/button.js"></script>
-  <script>
-      var x = new Array();
-      for(i=0;i<100;i++){
-        x[i]=0;
-      }
-      function love(clicked_id){
-        x[clicked_id] += 1;
-        document.getElementById(clicked_id).innerHTML = "좋아요 "+x[clicked_id];
-      }
-    </script>
 </head>
 
 <body>
@@ -90,7 +80,7 @@
           </hr>
           <p class="content" id="c1"><%= item.created %></p>
           <p class="card-text"><%= item.description %></p></br>
-          <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="love(this.id)">좋아요 0</button>
+          <button class="btn btn-light" id="<%= item.num %>" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
 
 >>>>>>> 27e43758a1592f0eb969104eacb5455ba844ade9
         </div>
