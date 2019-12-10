@@ -272,7 +272,7 @@ app.get('/board/edit/:id', function (request, response) {
     db.query('update board set love=love+1 WHERE num = ?', [
         request.params.id
     ], function (error, result) {
-      response.redirect("/board");
+      response.redirect("/board#"+(1+request.params.id*1));
     });
   });
 });
