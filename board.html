@@ -42,30 +42,6 @@
             <option value="긴급">긴급</option>
           </select>
         </div>
-<<<<<<< HEAD
-    </form>
-      </div>
-      <% data.reverse().forEach(function (item, index) { %>
-        <div class="row" id="<%= item.type %>" name="글">
-          <div class="card">
-            <div class="card-body">
-              </br>
-              <p>
-                <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
-              </p>
-              <hr></hr>
-              <p class="content" id="c1"><%= item.created %></p>
-              <p class="card-text" name="desc"><%= item.description %></p></br>
-            </div>
-            <button type="button" class="btn btn-light">좋아요<%= item.love %></button>
-          </div>
-        </div>
-        <% }); %>
-      <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
-            남기기</button>
-=======
       </form>
     </div>
     <% data.reverse().forEach(function (item, index) { %>
@@ -80,9 +56,8 @@
           </hr>
           <p class="content" id="c1"><%= item.created %></p>
           <p class="card-text"><%= item.description %></p></br>
-          <button class="btn btn-light" id="<%= item.num %>" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
-
->>>>>>> 27e43758a1592f0eb969104eacb5455ba844ade9
+          <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
+          <button class="btn btn-light" onclick="like()">test</button>
         </div>
       </div>
     </div>

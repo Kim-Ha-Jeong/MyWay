@@ -59,3 +59,29 @@ function buttonsearch(){
     }
   }
 }
+
+function like(){
+  var like=document.getElementsByName('like');
+  var likenum=new Array();
+  var likeorder=new Array();
+  for(var i=0;i<like.length;i++){
+    var likestring=like[i].innerHTML.substring(3);
+    likenum[i]=likestring*1;
+    likeorder[i]=likenum[i];
+  }
+  for(var i=0;i<likenum.length;i++){
+    var key=likenum[i];
+    var a=i;
+    var j;
+    for(j=i-1;j>=0 && likenum[i]>key;j--){
+      likenum[j+1]=likenum[j];
+    }
+    likenum[j+1]=key;
+    likeorder[j+1]=a;
+  }
+
+  var list=document.getElementsByName('글');
+  for(var i=0;i<like.length;i++){
+    console.log(likeorder[i]);
+  }
+}
