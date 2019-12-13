@@ -9,13 +9,12 @@ var router = express.Router();
 
 var mysql = require('mysql');
 var db = mysql.createConnection({
-
-  user: 'root',
-  port : 3306,
-  password: '111111',
-  database: 'MyWay'
-});
-db.connect();
+    user: 'root',
+    port : 3306,
+    password: '1234',
+    database: 'MyWay'
+  });
+  db.connect();
 
 var app = express();
 app.use(bodyParser.urlencoded({
@@ -250,22 +249,7 @@ app.get('/board/like', function (request, response) {
 });
 
 
-app.post('/board', function(request, response){
-  var search = request.body['search'];
-  db.query('select * from board where title like ? or description like ?',["%"+search+"%","%"+search+"%"], function (err, rows, fields) {
-      if (!err) {
-          if (rows[0]!=undefined) {
-              response.redirect("/board#"+rows[0]['num']);
-          } else {
-              response.send('no data');
-          }
 
-      } else {
-          response.send('error : ' + err);
-      }
-
-  });
-});
 
 app.get('/board/edit/:id', function (request, response) {
   fs.readFile('board.html', 'utf8', function (error, data) {
