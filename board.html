@@ -30,7 +30,7 @@
     <p class="title">실시간 지하철 수다</p>
     <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
     <div class="container" id="main-contain">
-      <form method="post">
+      <form >
         <div class="row" id="searchrow">
           <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
           <button id="searchbutton" type="button" onclick="buttonsearch()"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
@@ -50,12 +50,12 @@
         <div class="card-body">
           </br>
           <p>
-            <h5 class="card-title">[<%= item.type %>] <%= item.title %></h5>
+            <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
           </p>
           <hr>
           </hr>
           <p class="content" id="c1"><%= item.created %></p>
-          <p class="card-text"><%= item.description %></p></br>
+          <p class="card-text" name="desc"><%= item.description %></p></br>
           <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
           <button class="btn btn-light" onclick="like()">test</button>
         </div>

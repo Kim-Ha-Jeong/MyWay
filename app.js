@@ -249,22 +249,7 @@ app.get('/board/like', function (request, response) {
 });
 
 
-app.post('/board', function(request, response){
-  var search = request.body['search'];
-  db.query('select * from board where title like ? or description like ?',["%"+search+"%","%"+search+"%"], function (err, rows, fields) {
-      if (!err) {
-          if (rows[0]!=undefined) {
-              response.redirect("/board#"+rows[0]['num']);
-          } else {
-              response.send('no data');
-          }
 
-      } else {
-          response.send('error : ' + err);
-      }
-
-  });
-});
 
 app.get('/board/edit/:id', function (request, response) {
   fs.readFile('board.html', 'utf8', function (error, data) {

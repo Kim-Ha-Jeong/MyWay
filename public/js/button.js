@@ -51,7 +51,7 @@ function buttonsearch(){
   for(var i=0;i<getTitle.length;i++){
     var title=getTitle[i].innerHTML;
     var desc=getDesc[i].innerHTML;
-    if((text==title)||(text==desc)){
+    if((title.includes(text))||(desc.includes(text))){
       all[i].style.display="block";
     }
     else{
