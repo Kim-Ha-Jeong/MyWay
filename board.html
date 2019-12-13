@@ -57,7 +57,6 @@
           <p class="content" id="c1"><%= item.created %></p>
           <p class="card-text" name="desc"><%= item.description %></p></br>
           <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
-          <button class="btn btn-light" onclick="like()">test</button>
         </div>
       </div>
     </div>
@@ -70,7 +69,7 @@
     </div>
     <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-light" style="float: right" onclick="order()">인기순</button>
+            <button type="submit" class="btn btn-light" style="float: right" onclick="location.href='/board/like'">인기순</button>
         </div>
       </div>
   </div>

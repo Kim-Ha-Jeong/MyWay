@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
@@ -238,19 +238,6 @@ app.get('/board', function (request, response) {
   });
 });
 
-app.get('/board/like', function (request, response) {
-  fs.readFile('board.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM board', function (error, results) {
-      response.send(ejs.render(data, {
-        data: results
-      }));
-    });
-  });
-});
-
-
-
-
 app.get('/board/edit/:id', function (request, response) {
   fs.readFile('board.html', 'utf8', function (error, data) {
     db.query('update board set love=love+1 WHERE num = ?', [
@@ -339,6 +326,35 @@ app.post('/signInfo', function (request, response) {
         md5(password),email,name,phone,id
     ], function (error, result) {
       response.redirect("/");
+    });
+  });
+});
+
+app.post('/board', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/board', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query(' select * from board order by love DESC;', function (error, result) {
+      response.redirect("/board");
+    });
+  });
+});
+
+
+app.get('/board/like', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board order by love asc', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
     });
   });
 });
