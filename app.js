@@ -179,7 +179,7 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
-
+/*
 app.get('/138H', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
@@ -189,7 +189,7 @@ app.get('/138H', function (request, response) {
     });
   });
 });
-
+*/
 app.post('/138H', function (request, response) {
   var tagName = request.body['tagName'];
   db.query('INSERT INTO tag (title) VALUES (?)', [

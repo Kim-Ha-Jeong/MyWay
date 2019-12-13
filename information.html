@@ -27,19 +27,16 @@
             <p class="sub-title">역의 기본 정보를 확인하세요!</p>
         </div>
         <hr style="margin-top:0;"></hr>
-        <% data.reverse() 
-                for(var i = 0; i < 1 ; i++){ %>
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text">플랫폼: <%= data[i].플랫폼 %></p>
-                            <p class="card-text">내리는 문: <%= data[i].내리는문 %></p>
-                            <p class="card-text">화장실: <%= data[i].화장실 %></p>
-                            <p class="card-text">반대편 횡단: <%= data[i].반대편횡단 %></p>
+                            <p class="card-text"><img src="/img/s_icon_station.png" id="info-img" class="img-fluid" alt="Responsive-img">플랫폼: <%= data[0].플랫폼 %></p>
+                            <p class="card-text">내리는 문: <%= data[0].내리는문 %></p>
+                            <p class="card-text">화장실: <%= data[0].화장실 %></p>
+                            <p class="card-text">반대편 횡단: <%= data[0].반대편횡단 %></p>
                         </div>
                     </div>
                 </div>
-                <% } %>
         <hr>
         </hr>
     </div>
