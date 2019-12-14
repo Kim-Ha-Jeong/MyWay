@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
@@ -179,7 +179,7 @@ app.post('/dropOut', function(request,response,next){
   });
 })
 
-
+/*
 app.get('/138H', function (request, response) {
   fs.readFile('suwon.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
@@ -189,7 +189,7 @@ app.get('/138H', function (request, response) {
     });
   });
 });
-
+*/
 app.post('/138H', function (request, response) {
   var tagName = request.body['tagName'];
   db.query('INSERT INTO tag (title) VALUES (?)', [
@@ -237,19 +237,6 @@ app.get('/board', function (request, response) {
     });
   });
 });
-
-app.get('/board/like', function (request, response) {
-  fs.readFile('board.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM board', function (error, results) {
-      response.send(ejs.render(data, {
-        data: results
-      }));
-    });
-  });
-});
-
-
-
 
 app.get('/board/edit/:id', function (request, response) {
   fs.readFile('board.html', 'utf8', function (error, data) {
@@ -339,6 +326,35 @@ app.post('/signInfo', function (request, response) {
         md5(password),email,name,phone,id
     ], function (error, result) {
       response.redirect("/");
+    });
+  });
+});
+
+app.post('/board', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/board', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query(' select * from board order by love DESC;', function (error, result) {
+      response.redirect("/board");
+    });
+  });
+});
+
+
+app.get('/board/like', function (request, response) {
+  fs.readFile('board.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board order by love asc', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
     });
   });
 });
