@@ -415,8 +415,49 @@ app.get('/I1:id', function (request, response) {
         }));
       });
     });
-  });  
+  });
   
+  /* 3호선 */
+  app.get('/M3:id', function (request, response) {
+    fs.readFile('./public/html/3호선/M3'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',"3"+[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+
+  app.get('/I3:id', function (request, response) {
+    fs.readFile('information.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',"3"+[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+  
+  /* 4호선 */
+  app.get('/M4:id', function (request, response) {
+    fs.readFile('./public/html/4호선/M4'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',"4"+[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+
+  app.get('/I4:id', function (request, response) {
+    fs.readFile('information.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',"4"+[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
 
   /* 5호선 */
   app.get('/M5:id', function (request, response) {
@@ -439,7 +480,7 @@ app.get('/I1:id', function (request, response) {
     });
   });  
 
-  /* 6호선 */
+/* 6호선 */
 app.get('/M6:id', function (request, response) {
   fs.readFile('./public/html/6호선/M6'+request.params.id+'.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"6"+[request.params.id], function (error, results) {
@@ -459,6 +500,27 @@ app.get('/I6:id', function (request, response) {
     });
   });
 });  
+
+ /* 7호선 */
+ app.get('/M7:id', function (request, response) {
+  fs.readFile('./public/html/7호선/M7'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"7"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/I7:id', function (request, response) {
+  fs.readFile('information.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"7"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+}); 
 
 /* 8호선 */
 app.get('/M8:id', function (request, response) {
@@ -480,6 +542,48 @@ app.get('/I8:id', function (request, response) {
     });
   });
 }); 
+
+/* 9호선 */
+app.get('/M9:id', function (request, response) {
+  fs.readFile('./public/html/9호선/M9'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"9"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/I9:id', function (request, response) {
+  fs.readFile('information.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"9"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+/* 분당선 */
+app.get('/MB:id', function (request, response) {
+  fs.readFile('./public/html/분당선/B'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"B"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/IB:id', function (request, response) {
+  fs.readFile('information.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',"B"+[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
 
 /* 신분당선 */
 app.get('/MSB:id', function (request, response) {
