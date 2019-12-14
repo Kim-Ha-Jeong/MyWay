@@ -278,7 +278,47 @@ app.post('/board', function (request, response) {
 });
 
 /* 상세보기 */
-/* 노가다 예시 코드 */
+/* 1호선 */
+app.get('/M:id', function (request, response) {
+  fs.readFile('./public/html/1호선/1호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/M:id', function (request, response) {
+  var stationName = request.body['stationName'];
+  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/M"+rows[0]['num']);
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
+/* 상세보기 세번째 div 역정보 */
+app.get('/I:id', function (request, response) {
+  fs.readFile('./public/html/1호선/1호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});  
+
+/* 상세보기 */
+/* 2호선 */
   app.get('/M:id', function (request, response) {
     fs.readFile('./public/html/2호선/2호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
