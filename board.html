@@ -25,25 +25,24 @@
 <body>
   <div class="container" id="main-contain">
     <div class="row">
-      <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid">
+      <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid" style="margin-top:10%;">
     </div>
-    <p class="title">실시간 지하철 수다</p>
-    <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
-    <div class="container" id="main-contain">
-      <form >
-        <div class="row" id="searchrow">
-          <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
-          <button id="searchbutton" type="button" onclick="buttonsearch()"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
-              class="img-fluid" ></button>
-          <select name="type" id="typeselect" onchange='select()'>
-            <option value="전체">전체</option>
-            <option value="잡담">잡담</option>
-            <option value="정보">정보</option>
-            <option value="긴급">긴급</option>
-          </select>
-        </div>
-      </form>
-    </div>
+    <p class="title" style="margin-top:5%;">실시간 지하철 수다</p>
+    <p style="margin-bottom:5%;">모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+    <form>
+      <div class="row" id="searchrow" style="font-size:0.9rem;">
+        <select name="type" id="typeselect" onchange='select()'>
+          <option value="전체">전체</option>
+          <option value="잡담">잡담</option>
+          <option value="정보">정보</option>
+          <option value="긴급">긴급</option>
+        </select>
+
+        <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
+        <button id="searchbutton" type="button" onclick="buttonsearch()" style="background-color:#eeeeee">검색</button>
+        <button type="button" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/insert'">글쓰기</button>
+      </div>
+    </form>
     <% data.reverse().forEach(function (item, index) { %>
     <div class="row" id="<%= item.type %>" name="글">
       <div class="card">
@@ -56,17 +55,12 @@
           </hr>
           <p class="content" id="c1"><%= item.created %></p>
           <p class="card-text" name="desc"><%= item.description %></p></br>
-          <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
+          <button class="btn btn-light" id="<%= item.num %>" name="like"
+            onclick="location.href='/board/edit/<%= item.num %>'" style="font-size:0.85rem">좋아요 <%= item.love %></button>
         </div>
       </div>
     </div>
     <% }); %>
-    <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-light" style="float: right" onclick="location.href='/insert'">글
-          남기기</button>
-      </div>
-    </div>
   </div>
 </body>
 
