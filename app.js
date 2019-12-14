@@ -372,16 +372,30 @@ app.get('/information', function (request, response) {
 
 
 
-for (var i = 301; i < 346; i++) {
-  app.get('/M' + i, function (request, response) {
-    fs.readFile('./public/html/3호선/3호선/M' + i + '.html', 'utf8', function (error, data) {
-      db.query('SELECT * FROM station where num=? and 선="3"',[i], function (error, results) {
+
+
+  app.get('/M:id', function (request, response) {
+    fs.readFile('./public/html/3호선/3호선/M' + request.params.id + '.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=? and 선="3"',[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
         }));
       });
     });
   });
-}
+
+
+
+  app.get('/I:id', function (request, response) {
+    fs.readFile('./public/html/3호선/3호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?', [request.params.id], function (error,results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+
+
  
 
