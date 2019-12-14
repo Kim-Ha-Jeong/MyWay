@@ -20,43 +20,41 @@
 </head>
 
 <body>
-  <div class="row">
-    <a href="/" id="logo" alt="Responsive-image" class="img-fluid"><img src="/img/logo.png" ></a>
-  </div>
-  <p class="title">실시간 지하철 수다 작성하기</p>
-  <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
   <div class="container" id="main-contain">
     <div class="row">
+      <img src="/img/logo.png" id="logo" alt="Responsive-image" class="img-fluid" style="margin-top:10%;">
+    </div>
+    <p class="title" style="margin-top:5%;">실시간 지하철 수다 작성하기</p>
+    <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+    <div class="row">
       <div class="col">
-
         <div class="row">
           <div class="col">
             <form method="post">
               <fieldset>
                 <p class="title2" style="text-align:left"><label>제목</label></p>
-                <div class="row">
-                  <select name="type">
+                <div class="row" id="searchrow" style="font-size:0.9rem;">
+                  <select name="type" style="margin : 0% 1% 2% 0.5%;">
                     <option value="">글 분류 선택</option>
-                    <option value="잡담" selected="selected">잡담</option>
+                    <option value="잡담">잡담</option>
                     <option value="정보">정보</option>
                     <option value="긴급">긴급</option>
                   </select>
-                  <input type="text" class="text" name="title"></input>
+                  <input type="text" name="title" id="input2" placeholder="제목을 입력하세요."></input>
                 </div>
                 <p class="title2" style="text-align:left"><label>내용</label></p>
-                <textarea style="width:100%; border-radius: 10px; border-color : #DDDDDD;" rows="10"
+                <textarea style="width:100%; border-radius: 10px; border-color : #DDDDDD;" rows="6"
                   name="description"></textarea>
-                <button type="submit" class="btn btn-light">작성</button>
-                <button type="button" class="btn btn-light" style="background-color:#ffffff; color : #999999"
+                <button type="submit" class="btn btn-light" style="font-size:0.9rem">작성</button>
+                <button type="button" class="btn btn-light"
+                  style="background-color:#ffffff; font-size:0.9rem; color : #999999"
                   onclick="location.href='/board'">취소</button>
               </fieldset>
             </form>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </body>
-
 </html>
