@@ -540,3 +540,45 @@ app.get('/information', function (request, response) {
     });
   });
 });
+
+  app.get('/M:id', function (request, response) {
+    fs.readFile('./public/html/3호선/3호선/M' + request.params.id + '.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=? and 선="3"',[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+
+  app.post('/M:id', function (request, response) {
+    var stationName = request.body['stationName'];
+    db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+        if (!err) {
+            if (rows[0]!=undefined) {
+                response.redirect("/M"+rows[0]['num']);
+  
+            } else {
+                response.send('no data');
+            }
+  
+        } else {
+            response.send('error : ' + err);
+        }
+    });
+  });
+
+
+  app.get('/I:id', function (request, response) {
+    fs.readFile('./public/html/3호선/3호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?', [request.params.id], function (error,results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+
+
+ 
+
