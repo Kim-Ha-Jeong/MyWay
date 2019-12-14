@@ -142,7 +142,7 @@ app.post('/homeLogin', function (request, response) {
                   'pw : ' + rows[0]['password']+'<br>'+
                   'name : '+rows[0]['name']);
             */
-              response.redirect("/"+rows[0]['num']);
+              response.redirect("/M"+rows[0]['num']);
 
           } else {
               response.send('no data');
@@ -278,18 +278,48 @@ app.post('/board', function (request, response) {
 });
 
 /* 상세보기 */
+/* 노가다 예시 코드 */
 
-for(var i=100;i<130;i++){
-  app.get('/'+i, function (request, response) {
-    fs.readFile('suwon.html', 'utf8', function (error, data) {
-      db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+
+  app.get('/M:id', function (request, response) {
+    fs.readFile('./public/html/2호선/2호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
         }));
       });
     });
   });
-}
+
+  app.post('/M:id', function (request, response) {
+    var stationName = request.body['stationName'];
+    db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+        if (!err) {
+            if (rows[0]!=undefined) {
+                response.redirect("/M"+rows[0]['num']);
+  
+            } else {
+                response.send('no data');
+            }
+  
+        } else {
+            response.send('error : ' + err);
+        }
+    });
+  });
+
+  /* 상세보기 세번째 div 역정보 */
+app.get('/info:id', function (request, response) {
+  fs.readFile('./public/html/2호선/2호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});  
+
+
 /* 수원역 해시태그 */
 app.post('/138H', function (request, response) {
   var tagName = request.body['tagName'];
@@ -316,7 +346,7 @@ app.post('/138', function (request, response) {
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
-              response.redirect("/"+rows[0]['num']);
+              response.redirect("/M"+rows[0]['num']);
 
           } else {
               response.send('no data');
@@ -369,19 +399,3 @@ app.get('/information', function (request, response) {
     });
   });
 });
-
-
-
-for (var i = 301; i < 346; i++) {
-  app.get('/M' + i, function (request, response) {
-    fs.readFile('./public/html/3호선/3호선/M' + i + '.html', 'utf8', function (error, data) {
-      db.query('SELECT * FROM station where num=? and 선="3"',[i], function (error, results) {
-        response.send(ejs.render(data, {
-          data: results
-        }));
-      });
-    });
-  });
-}
- 
-
