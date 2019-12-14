@@ -168,6 +168,18 @@ select {
     overflow : hidden;
 }
 
+#input2{
+    background-color : white;
+    width: 76.5%;
+    margin: 0 0 2% 0;
+    border : 1px solid #dddddd;
+    font-size : 0.9rem;
+    border-radius : 10px;
+    padding : 1% 0 1% 1%;
+    color : black;
+    overflow : hidden;
+}
+
 button:focus {
     outline: none;
 }

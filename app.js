@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
@@ -142,7 +142,7 @@ app.post('/homeLogin', function (request, response) {
                   'pw : ' + rows[0]['password']+'<br>'+
                   'name : '+rows[0]['name']);
             */
-              response.redirect("/"+rows[0]['num']);
+              response.redirect("/M"+rows[0]['num']);
 
           } else {
               response.send('no data');
@@ -278,18 +278,86 @@ app.post('/board', function (request, response) {
 });
 
 /* 상세보기 */
+/* 1호선 */
+app.get('/M:id', function (request, response) {
+  fs.readFile('./public/html/1호선/1호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
 
-for(var i=100;i<130;i++){
-  app.get('/'+i, function (request, response) {
-    fs.readFile('suwon.html', 'utf8', function (error, data) {
-      db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+app.post('/M:id', function (request, response) {
+  var stationName = request.body['stationName'];
+  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+      if (!err) {
+          if (rows[0]!=undefined) {
+              response.redirect("/M"+rows[0]['num']);
+
+          } else {
+              response.send('no data');
+          }
+
+      } else {
+          response.send('error : ' + err);
+      }
+  });
+});
+
+/* 상세보기 세번째 div 역정보 */
+app.get('/I:id', function (request, response) {
+  fs.readFile('./public/html/1호선/1호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});  
+
+/* 상세보기 */
+/* 2호선 */
+  app.get('/M:id', function (request, response) {
+    fs.readFile('./public/html/2호선/2호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
         }));
       });
     });
   });
-}
+
+  app.post('/M:id', function (request, response) {
+    var stationName = request.body['stationName'];
+    db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+        if (!err) {
+            if (rows[0]!=undefined) {
+                response.redirect("/M"+rows[0]['num']);
+  
+            } else {
+                response.send('no data');
+            }
+  
+        } else {
+            response.send('error : ' + err);
+        }
+    });
+  });
+
+  /* 상세보기 세번째 div 역정보 */
+  app.get('/I:id', function (request, response) {
+    fs.readFile('./public/html/2호선/2호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });  
+
+
 /* 수원역 해시태그 */
 app.post('/138H', function (request, response) {
   var tagName = request.body['tagName'];
@@ -316,7 +384,7 @@ app.post('/138', function (request, response) {
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
-              response.redirect("/"+rows[0]['num']);
+              response.redirect("/M"+rows[0]['num']);
 
           } else {
               response.send('no data');
@@ -369,6 +437,7 @@ app.get('/information', function (request, response) {
     });
   });
 });
+<<<<<<< HEAD
 
 
 
@@ -399,3 +468,5 @@ app.get('/information', function (request, response) {
 
  
 
+=======
+>>>>>>> ba18367316861f5d6bde5e56ceff307d94fda52c
