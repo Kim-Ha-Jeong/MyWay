@@ -437,11 +437,6 @@ app.get('/information', function (request, response) {
     });
   });
 });
-<<<<<<< HEAD
-
-
-
-
 
   app.get('/M:id', function (request, response) {
     fs.readFile('./public/html/3호선/3호선/M' + request.params.id + '.html', 'utf8', function (error, data) {
@@ -453,6 +448,22 @@ app.get('/information', function (request, response) {
     });
   });
 
+  app.post('/M:id', function (request, response) {
+    var stationName = request.body['stationName'];
+    db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
+        if (!err) {
+            if (rows[0]!=undefined) {
+                response.redirect("/M"+rows[0]['num']);
+  
+            } else {
+                response.send('no data');
+            }
+  
+        } else {
+            response.send('error : ' + err);
+        }
+    });
+  });
 
 
   app.get('/I:id', function (request, response) {
@@ -468,5 +479,3 @@ app.get('/information', function (request, response) {
 
  
 
-=======
->>>>>>> ba18367316861f5d6bde5e56ceff307d94fda52c
