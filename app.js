@@ -57,7 +57,7 @@ app.post('/', function (request, response) {
                   'pw : ' + rows[0]['password']+'<br>'+
                   'name : '+rows[0]['name']);
             */
-              response.redirect("/"+rows[0]['num']);
+              response.redirect("/M"+rows[0]['num']);
 
           } else {
               response.send('no data');
@@ -369,3 +369,19 @@ app.get('/information', function (request, response) {
     });
   });
 });
+
+
+
+for (var i = 301; i < 346; i++) {
+  app.get('/M' + i, function (request, response) {
+    fs.readFile('./public/html/3호선/3호선/M' + i + '.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=? and 선="3"',[i], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+}
+ 
+
