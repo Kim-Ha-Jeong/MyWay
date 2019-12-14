@@ -86,7 +86,7 @@ input:focus {
 	align-items: center;
 	color: #00A4FF;
 	font-size: 12px;
-	margin: 8px 0px;
+	margin: 0.8% 0;
 }
 #hr-sect::before,
 #hr-sect::after {

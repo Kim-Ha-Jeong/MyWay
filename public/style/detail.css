@@ -34,7 +34,7 @@ img{
 #main-contain{
     background-color:white;
     width : 67%;
-    margin-top: 2%;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2%;
@@ -59,10 +59,10 @@ img{
 /* 검색창 관련 */
 #fakebox{
     background-color : white;
-    width: 50%;
+    width: 30%;
     margin: auto;
-    border : 5px solid #00A4FF;
-    border-radius : 20px;
+    border : 6px solid #00A4FF;
+    border-radius : 40px;
     font-size : 1.2rem;
     padding : 1% 0 1% 1%;
     color : black;
@@ -173,4 +173,12 @@ p.like{
 #nabu{
     margin : 3%;
     width : 94%;
+}
+
+#sub-contain{
+    background-color:white;
+    width : 67%;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
 }
