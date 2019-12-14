@@ -278,6 +278,18 @@ app.post('/board', function (request, response) {
 });
 
 /* 상세보기 */
+
+for(var i=100;i<130;i++){
+  app.get('/'+i, function (request, response) {
+    fs.readFile('suwon.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
+    });
+  });
+}
 /* 수원역 해시태그 */
 app.post('/138H', function (request, response) {
   var tagName = request.body['tagName'];
