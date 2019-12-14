@@ -37,6 +37,7 @@ img{
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 2%;
 }
 
 /* searchbutton관련 */
@@ -124,14 +125,14 @@ a:link,a:active,a:hover,a:visited{
 
 /* 실시간 인기 글 */
 .card{
-    margin : 1.5%;
+    margin : 1.5% 4.5%;
     width: 100%;
     border-radius: 0.5rem;
     border: 0;
 }
 
 .card-body{
-    padding : 0.6rem;
+    padding : 0.8rem;
 }
 
 .card-title{
@@ -150,7 +151,7 @@ a:link,a:active,a:hover,a:visited{
 p{
     margin: auto;
     font-size: 0.7rem;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
     color : #929292;
     font-family: 'Nanum-R';
 }
@@ -165,4 +166,11 @@ p.like{
 
 #map-wrap{
     background-color: #F1F5F8;
+    margin : 0 1.5%;
+    border-radius : 10px;
+}
+
+#nabu{
+    margin : 3%;
+    width : 94%;
 }

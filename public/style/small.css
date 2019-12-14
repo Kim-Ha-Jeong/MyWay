@@ -65,10 +65,18 @@ div.tag{
     font-size : 0.7rem;
     width : fit-content;
     display : inline-block;
+    border-radius: 5px;
+    padding : 1%;
+    margin : 2% 0;
 }
 
 div.tag-wrapper{
     text-align : center;
+}
+
+#tag-wrapper{
+    margin-bottom: 2.5%;
+    margin-top: 3.5%;
 }
 
 #tagbox{
