@@ -99,7 +99,7 @@
                             <button type="button" class="btn btn-light" onclick="location.href='/login'"
                                 style="font-size:1rem">로그인</button>
                             <p class="like">
-                                <a href="/signUp" style="font-size:0.85rem">회원가입</a>
+                                <a href="/signUp" style="font-size:0.7rem">회원가입</a>
                             </p>
                         </div>
                     </div>
@@ -113,26 +113,26 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">[<%= data[i].type %>]<%= data[i].title %></h5>
-                            <p class="card-text"><%= data[i].description %></p>
+                            <p class="card-text" style="font-size:0.75rem;"><%= data[i].description %></p>
                             <p class="like">좋아요 <%= data[i].love %></p>
                         </div>
                     </div>
                 </div>
                 <% } %>
-                <hr>
+                <hr style="margin:1.8% 0% 1.5%;">
                 </hr>
                 <div class="row">
                     <button type="button" class="moreshow" onclick="location.href='/login'">로그인하면 더 많은 글을 볼 수
                         있어요!</button>
                 </div>
-                <hr>
+                <hr style="margin:1.8% 0% 3%;">
                 </hr>
             </div>
 
 
             <div class="col-sm-7" id="subwaypic"
-                style="padding-right:0; overflow: hidden; margin-top : 0.5%; margin-bottom: 1.5%; background-color: #fff;"></div>
-            <div class="col-sm-1 bar" style = margin-top:0.5%;>
+                style="padding-right:0; overflow: hidden; margin-top : 0.5%; margin-bottom: 0.8%; background-color: #fff;"></div>
+            <div class="col-sm-1 bar" style = "margin-top:0.5%;">
                 <button type="button" class="line_button"><img src='/img/1.png' class="button" id="1st"
                         alt="Responsive-image" onclick='text(this.id)'></button>
                 <button type="button" class="line_button"><img src='/img/2.png' class="button" id="2nd"
