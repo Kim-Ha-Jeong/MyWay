@@ -55,7 +55,7 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
-    $("#inform").load("/information", function (data) {
+    $("#inform").load("/I811", function (data) {
       var page = $(data).contents();
     });
   }); 
@@ -74,7 +74,7 @@
         <div id="fakebox">
           <form method="post">
             <div class="row" id="searchrow">
-              <input type="text" name="stationName" style="text-align:center;" placeholder="수원역">
+              <input type="text" name="stationName" style="text-align:center;" placeholder="<%= data[0].역이름 %>역">
               <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
                   alt="Responsive-image" class="img-fluid"></button>
             </div>
