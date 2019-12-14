@@ -399,5 +399,3 @@ app.get('/information', function (request, response) {
     });
   });
 });
-
-
