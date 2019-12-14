@@ -18,20 +18,21 @@
     <link rel="stylesheet" href="/style/small.css" type="text/css">
 </head>
 
+
+
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top:0;">
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><%= data[0].id %>님 안녕하세요!</h5>
+                    <h5 class="card-title"><span style="color :#00A4FF"><%= data[0].name %></span>님 안녕하세요!</h5>
                     <p class="like">
-                        <a href="/signInfo" style="font-size:0.85rem">마이페이지</a>
+                        <a href="/signInfo" style="font-size:0.7rem; color :#00A4FF;">마이페이지</a>
+                        <a href="/" style="font-size:0.7rem">로그아웃</a>
                     </p>
                 </div>
             </div>
         </div>
-        <hr>
-        </hr>
     </div>
     </div>
 </body>

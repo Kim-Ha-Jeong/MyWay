@@ -27,14 +27,14 @@ img{
 
 /* 로고 */
 #logo{
-    width : 15%;
+    width : 30%;
     margin: auto;
     margin-top: 5%;      
 }
 
 /* 전체 요소 틀 */
 #main-contain{
-    width : 40%;
+    width : 50%;
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto;
@@ -113,7 +113,7 @@ p{
 
 .btn{
     margin-top : 2%;
-    font-size : 1rem;
+    font-size : 0.8rem;
     background-color : #00A4FF;
     color : white;
     font-family : 'Nanum-B';
@@ -121,17 +121,53 @@ p{
 
 
 select {
-    margin : 0 2% 0 2%;
+    margin : 2% 1% 0% 0.5%;
     width: 150px;
     padding: 0.5em 0.3em;
     font-family : 'Nanum-R';
     border-radius: 10px;
     border-color : #DDDDDD;
     color : #555555;
+    outline : none;
 }
 
 .text{
     width : 72%;
     border-radius: 10px;
     border-color : none;
+}
+
+#searchrow{
+    padding-left: 1%;
+}
+
+#search{
+    width: 70%;
+}
+
+#searchbutton{
+    background-color: white;
+    width: 30%;
+    margin: 2% 0 0 0;
+    border : 1px solid #dddddd;
+    width: 10%;
+    border-top-right-radius : 10px;
+    border-bottom-right-radius : 10px;
+}
+
+#input{
+    background-color : white;
+    width: 57%;
+    margin: 2% 0 0 0;
+    border : 1px solid #dddddd;
+    font-size : 0.9rem;
+    border-top-left-radius : 10px;
+    border-bottom-left-radius : 10px;
+    padding : 1% 0 1% 1%;
+    color : black;
+    overflow : hidden;
+}
+
+button:focus {
+    outline: none;
 }

@@ -74,6 +74,7 @@ input{
     margin: auto;
     font-size: 1.15rem;
     padding-left: 3%;
+    font-family : 'Nanum-R';
 }
 
 input:focus {
@@ -192,7 +193,7 @@ p.like{
 }
 
 .moreshow{
-    font-size : 1rem;
+    font-size:0.85rem;
     background-color : none;
     color : #aaaaaa;
     font-family : 'Nanum-R';
