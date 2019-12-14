@@ -30,11 +30,11 @@
     <p class="title">실시간 지하철 수다</p>
     <p>모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
     <div class="container" id="main-contain">
-      <form >
+      <form method="post">
         <div class="row" id="searchrow">
-          <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
-          <button id="searchbutton" type="button" onclick="buttonsearch()"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
-              class="img-fluid" ></button>
+          <input type="text" name="search" placeholder="실시간 상황을 검색하세요!">
+          <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search" alt="Responsive-image"
+              class="img-fluid" onclick='search()'></button>
           <select name="type" id="typeselect" onchange='select()'>
             <option value="전체">전체</option>
             <option value="잡담">잡담</option>
@@ -45,18 +45,19 @@
       </form>
     </div>
     <% data.reverse().forEach(function (item, index) { %>
-    <div class="row" id="<%= item.type %>" name='글'>
-      <div class="card" name='like' id=<%= item.love %> >
+    <div class="row" id="<%= item.type %>" name="글">
+      <div class="card">
         <div class="card-body">
           </br>
           <p>
-            <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
+            <h5 class="card-title">[<%= item.type %>] <%= item.title %></h5>
           </p>
           <hr>
           </hr>
           <p class="content" id="c1"><%= item.created %></p>
-          <p class="card-text" name="desc"><%= item.description %></p></br>
-          <button class="btn btn-light" id="<%= item.num %>" name="like" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
+          <p class="card-text"><%= item.description %></p></br>
+          <button class="btn btn-light" id="<%= item.num %>" onclick="location.href='/board/edit/<%= item.num %>'">좋아요 <%= item.love %></button>
+
         </div>
       </div>
     </div>
@@ -67,11 +68,7 @@
           남기기</button>
       </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <button type="submit" class="btn btn-light" style="float: right" onclick="location.href='/board/like'">인기순</button>
-        </div>
-      </div>
   </div>
 </body>
+
 </html>
