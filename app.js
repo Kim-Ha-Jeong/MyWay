@@ -279,8 +279,6 @@ app.post('/board', function (request, response) {
 
 /* 상세보기 */
 /* 노가다 예시 코드 */
-
-
   app.get('/M:id', function (request, response) {
     fs.readFile('./public/html/2호선/2호선/M'+request.params.id+'.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
@@ -309,15 +307,15 @@ app.post('/board', function (request, response) {
   });
 
   /* 상세보기 세번째 div 역정보 */
-app.get('/info:id', function (request, response) {
-  fs.readFile('./public/html/2호선/2호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
-      response.send(ejs.render(data, {
-        data: results
-      }));
+  app.get('/I:id', function (request, response) {
+    fs.readFile('./public/html/2호선/2호선_info/I'+request.params.id+'.html', 'utf8', function (error, data) {
+      db.query('SELECT * FROM station where num=?',[request.params.id], function (error, results) {
+        response.send(ejs.render(data, {
+          data: results
+        }));
+      });
     });
-  });
-});  
+  });  
 
 
 /* 수원역 해시태그 */
