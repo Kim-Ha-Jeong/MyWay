@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
@@ -77,8 +77,8 @@ app.get('/signUp', function (request, response) {
 
 app.post('/signUp', function (request, response) {
   var body = request.body;
-  db.query('INSERT INTO sign (id, password, email, name, phone) VALUES (?, ?, ?, ?, ?)', [
-      body.id, md5(body.password), body.email, body.name, body.phone
+  db.query('INSERT INTO sign (id, password, email, name, phone, secret) VALUES (?, ?, ?, ?, ?,?)', [
+      body.id, md5(body.password), body.email, body.name, body.phone, body.password
   ], function () {
     response.redirect('/');
   });
@@ -322,8 +322,8 @@ app.post('/signInfo', function (request, response) {
   var name = request.body['name'];
   var phone = request.body['phone'];
   fs.readFile('signInfo.html', 'utf8', function (error, data) {
-    db.query('update sign set password=?,email=?,name=?,phone=? WHERE id = ?', [
-        md5(password),email,name,phone,id
+    db.query('update sign set password=?,email=?,name=?,phone=?,secret=? WHERE id = ?', [
+        md5(password),email,name,phone,password,id
     ], function (error, result) {
       response.redirect("/");
     });
