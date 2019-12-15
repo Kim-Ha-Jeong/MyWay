@@ -281,16 +281,6 @@ app.post('/board', function (request, response) {
   });
 });
   
-/* 수원역 해시태그 */
-app.post('/138H', function (request, response) {
-  var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
-      tagName
-  ], function () {
-    response.redirect('/138#');
-  });
-});
-
 /* 상세보기 첫번째 div 게시판 */
 app.get('/boardS', function (request, response) {
   fs.readFile('boardS.html', 'utf8', function (error, data) {
@@ -303,7 +293,7 @@ app.get('/boardS', function (request, response) {
 });
 
 /* 상세보기 두번째 div 해시태그 */
-app.get('/hashtag', function (request, response) {
+app.get('/H:id', function (request, response) {
   fs.readFile('hashtag.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM tag', function (error, results) {
       response.send(ejs.render(data, {
@@ -312,13 +302,13 @@ app.get('/hashtag', function (request, response) {
     });
   });
 });
-app.post('/hashtag', function (request, response) {
+
+app.post('/H:id', function (request, response) {
   var tagName = request.body['tagName'];
   db.query('INSERT INTO tag (title) VALUES (?)', [
       tagName
   ], function () {
-    response.redirect('/hashtag');
-
+    response.redirect('/M'+request.params.id+"#");
     });
   });
 

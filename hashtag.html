@@ -36,16 +36,21 @@
         <hr>
         </hr>
         <div id="tag-wrapper">
-            <form method="post" action="/138H">
+            <form method="post" name="hash" onSubmit="formAction(this)">
                 <div class="row" id="tagbox">
                     <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
                     <button class="btn btn-light" id="tagButton" type="submit">등록</button>
                 </div>
             </form>
         </div>
-        
-    </div>
     </div>
 </body>
 
+<script>
+    var para = document.location.href.split("M");
+    var target = "/H"+para[1];
+    function formAction(){
+        document.hash.action = target;
+    }
+</script>
 </html>
