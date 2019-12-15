@@ -18,21 +18,24 @@ body{
 
 /* 로고 이미지 */
 img{
-    width : 55%;
+    width : 90%;
     margin : auto;
     margin-bottom : 3%;
+}
+.img-fluid{
+    width:60%;
 }
 
 /* label */
 p{
     margin-bottom: 0.5%;
-    font-size : 0.7rem;
+    font-size : 0.85rem;
 }
 
 /* input 부모 태그 */
 div.content{
     width : 100%;
-    margin-bottom : 6%;
+    margin-bottom : 7%;
     text-align: center;
 }
 
@@ -42,7 +45,7 @@ input{
     height : 120%;
     border : 0.8px solid #00A4FF;
     border-radius : 7px;
-    font-size : 0.6rem;
+    font-size : 0.85rem;
     padding : 1% 0 1% 3%;
     color : black;
 }
@@ -65,7 +68,7 @@ hr{
 
 a{
     color: rgba(0,0,0,0.5);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin : auto;
 }
 

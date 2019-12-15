@@ -1,51 +1,67 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-    <title>공지사항</title>
-      <!-- Font Awesome -->
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  </head>
-  
-  <body>
-      <div class="row">
-      <div class="col">
-        <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col" style="width:2.5%">#</th>
-                <th scope="col" style="width:65%">제목</th>
-                <th scope="col" style="width:15%">수정</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% data.reverse().forEach(function (item, index) { %>
-                  <tr>
-                    <td style="width:2.5%"><a href="/board/<%= item.num %>"><%= item.num %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.title %></td>
-                    <td style="width:65%"><a href="/board/<%= item.num %>"><%= item.created %></td>
-                  </tr>
-                <% }); %>
-            </tbody>
-          </table>
-      </div>
-    </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/style/board.css" type="text/css">
+
+  <title>공지사항</title>
+  <!-- Font Awesome -->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <script src="/js/button.js"></script>
+</head>
+
+<body>
+  <div class="container" id="main-contain">
     <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-light noticebutt" onclick="location.href='/insert'">추가</button>
+      <a href="/" id="logo" alt="Responsive-image" class="img-fluid"><img src="/img/logo.png" style="margin-top:10%;"></a>
+    </div>
+    <p class="title" style="margin-top:5%;">실시간 지하철 수다</p>
+    <p style="margin-bottom:5%;">모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
+    <form>
+      <div class="row" id="searchrow" style="font-size:0.9rem;">
+        <select name="type" id="typeselect" onchange='select()'>
+          <option value="전체">전체</option>
+          <option value="잡담">잡담</option>
+          <option value="정보">정보</option>
+          <option value="긴급">긴급</option>
+        </select>
+
+        <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
+        <button id="searchbutton" type="button" onclick="buttonsearch()" style="background-color:#eeeeee">검색</button>
+        <button type="button" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/insert'">글쓰기</button>
+        <button type="submit" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/board/like'">인기순</button>
+      </div>
+    </form>
+    <% data.reverse().forEach(function (item, index) { %>
+    <div class="row" id="<%= item.type %>" name='글'>
+      <div class="card" name='like' id=<%= item.love %> >
+        <div class="card-body">
+          </br>
+          <p>
+            <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
+          </p>
+          <hr>
+          </hr>
+          <p class="content" id="c1"><%= item.created %></p>
+          <p class="card-text" name="desc"><%= item.description %></p></br>
+          <button class="btn btn-light" id="<%= item.num %>" name="like"
+            onclick="location.href='/board/edit/<%= item.num %>'" style="font-size:0.85rem">좋아요 <%= item.love %></button>
+        </div>
       </div>
     </div>
-
-    </div>
-  </body>
+    <% }); %>
+  </div>
+</body>
 </html>
-

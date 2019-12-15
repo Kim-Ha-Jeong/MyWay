@@ -38,7 +38,11 @@ for i in range(11,62):          #응암부터 돌고 종착(봉화산)까지
 
 count=0
 for i in range(len(station_name_final)):
-    f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+"\n")
-    count=count+4
+    if i<9:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"70"+str(i+1)+"\""+"\n")
+        count=count+4
+    else:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"7"+str(i+1)+"\""+"\n")
+        count=count+4
 
 driver.close()

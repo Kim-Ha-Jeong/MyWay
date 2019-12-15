@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>공지사항</title>
+    <!-- Font Awesome -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="/style/mypage.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <a href="/" id="logo" alt="Responsive-image" class="img-fluid"><img src="/img/logo.png"></a>
+        </div>   
+        <div class="container">
+        <form method="post">
+          <fieldset>
+            <div class="row">
+                <p style="font-size:0.9rem">아이디
+                <br><span style="color:#999999"><%= data[0].id %></span></p>
+                <input id="in" type="text" name="id" value=<%= data[0].id %>>
+            </div>
+    
+            <div class="row" style="font-family:none;">
+                <p style="font-size:0.9rem">비밀번호</p>
+                <input id=1 type="password" name="password" style="font-size: 0.9rem" value=<%= data[0].secret %>>
+            </div>
+
+            <div class="row">
+                <p style="font-size:0.9rem">이름</p>
+                <input id=2 type="text" name="name" style="font-size: 0.9rem" value=<%= data[0].name %>>
+            </div>
+    
+            <div class="row">
+                <p style="font-size:0.9rem">전화번호</p>
+                <input id=3 type="text" name="phone" style="font-size: 0.9rem" value=<%= data[0].phone %>>
+            </div>
+
+            <div class="row">
+                <p style="font-size:0.9rem">이메일 </p>
+                <input id=4 type="text" name="email" style="font-size: 0.9rem" value=<%= data[0].email %>>
+            </div>
+        
+            <div class="row">
+                <button type="submit" class="btn btn-light" style="font-size:0.9rem">정보수정하기</button>
+            </div>
+         
+        </fieldset>
+        </form>
+        </div>
+        </div>
+</body>
+<script>
+     var input = document.getElementsByTagName("input"); 
+    $(document).ready(function(){
+        $('body').click(function(e){
+            var id = e.target.getAttribute('id');
+            if((id!='') && (id != null)){
+                if(input.password.id==id){
+                    input.password.value = "";
+                } else if(input.name.id==id){
+                    input.name.value = "";
+                } else if(input.phone.id==id){
+                    input.phone.value = "";
+                } else if(input.email.id==id){
+                    input.email.value = "";
+                }
+            }
+        });
+    });
+
+    function empty(){
+        if(input.password.value==null){
+            alert("시발");
+        }
+    }
+</script>
+
+</html>

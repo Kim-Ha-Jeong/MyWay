@@ -3,7 +3,7 @@ var clicked=new Array(false,false,false,false,false,false,false,false,false,fals
 
 function text(clicked_id) {
     var Line = new Array("1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "boon", "sinboon");
-    var circle = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "S")
+    var circle = new Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "S");
     var button=document.getElementById(clicked_id);
     var click_index;
     for(var i=0;i<Line.length;i++){

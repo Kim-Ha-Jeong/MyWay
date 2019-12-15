@@ -8,7 +8,7 @@ driver=webdriver.Chrome('C:/Users/suzie/Downloads/chromedriver_win32/chromedrive
 
 dt = datetime.datetime.now()
 filename = '6호선' + dt.strftime("%Y_%m_%d")
-f = open(filename + '.csv', 'w', encoding='cp949')
+f = open(filename + '.csv', 'w', encoding='cp949',newline='')
 
 station_name_final=[]
 facil_list_final=[]
@@ -38,7 +38,11 @@ for i in range(11,49):          #응암부터 돌고 종착(봉화산)까지
 
 count=0
 for i in range(len(station_name_final)):
-    f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+"\n")
-    count=count+4
+    if i<9:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"60"+str(i+1)+","+"\n")
+        count=count+4
+    else:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"6"+str(i+1)+","+"\n")
+        count=count+4
 
 driver.close()

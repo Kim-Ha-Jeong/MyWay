@@ -1,0 +1,89 @@
+/* 글씨체 */
+@font-face { 
+    font-family: 'Nanum-B'; 
+    src: url('/font/NanumSquareB.ttf'); 
+}
+
+/*전체 배경색, 글씨체 적용*/
+body{
+    background-color : #F1F5F8;
+    font-family : 'Nanum-B';
+}
+
+/* 틀 줄이기 */
+.container-fluid{
+    margin-top : 7%;
+    width : 30%;
+}
+
+/* 로고 이미지 */
+img{
+    width : 90%;
+    margin : auto;
+    margin-bottom : 3%;
+}
+.img-fluid{
+    width:60%;
+}
+
+/* label */
+p{
+    margin-bottom: 0.5%;
+    font-size : 0.7rem;
+}
+
+/* input 부모 태그 */
+div.content{
+    width : 100%;
+    margin-bottom : 6%;
+    text-align: center;
+}
+
+/* input(입력 받는 상자) */
+input{
+    width : 100%;
+    height : 120%;
+    border : 0.8px solid #00A4FF;
+    border-radius : 7px;
+    font-size: 0.8rem;
+    padding: 1.9% 0 1.8% 3%;
+    color : black;
+}
+
+/* 버튼 */
+.btn{
+    width : 100%;
+    font-size : 0.9rem;
+    background-color : #00A4FF;
+    color : white;
+    margin-top : 2%;
+    border : 7px;
+    font-family : 'Nanum-B';
+}
+
+/* login */
+hr{
+    margin-top : 3rem;
+}
+
+a{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.8rem;
+    margin : auto;
+}
+
+a:link,a:active,a:hover,a:visited{
+    text-decoration:none;
+    color : rgba(0,0,0,0.5);
+}
+
+/*아이디 input 숨기기*/
+#in{
+    visibility: hidden;
+    padding: 0%;
+    height: 0
+}
+
+.row{
+    margin-top: 3%;
+}

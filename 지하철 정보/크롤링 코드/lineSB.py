@@ -86,7 +86,11 @@ for i in range(7,13):          #동천부터 광교역까지
 
 count=0
 for i in range(len(station_name_final)):
-    f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+"\n")
-    count=count+4
+    if i<9:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"SB0"+str(i+1)+"\""+"\n")
+        count=count+4
+    else:
+        f.write(station_num[i]+","+station_name_final[i]+","+facil_list_final[count]+","+facil_list_final[count+1]+","+facil_list_final[count+2]+","+facil_list_final[count+3]+","+"=\"SB"+str(i+1)+"\""+"\n")
+        count=count+4
 
 driver.close()
