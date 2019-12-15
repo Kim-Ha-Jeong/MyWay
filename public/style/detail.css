@@ -183,3 +183,9 @@ p.like{
     margin-right: auto;
     margin-left: auto;
 }
+
+#Line1{
+    background-color : #0d3692;
+    width : 8%;
+    margin : auto;
+}
