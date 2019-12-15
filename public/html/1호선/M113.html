@@ -22,7 +22,9 @@
   <!-- 지하철 노선도 관련-->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -53,7 +55,7 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
-    $("#inform").load("/I202", function (data) {
+    $("#inform").load("/I113", function (data) {
       var page = $(data).contents();
     });
   }); 
@@ -85,9 +87,6 @@
 
     <div class="container-fluid" id="main-contain">
     <div class="row">
-      <button id="Line1" class="btn btn-light" onclick="location.href='/M102'">1호선&nbsp;&nbsp;></button>
-    </div>
-    <div class="row">
       <div class="col-sm-4 bar" id="board">
       </div>
       <div class="col-sm-4 bar" id="tag">
@@ -97,7 +96,7 @@
     </div>
     <div class="row" style="margin-top:2%;">
       <div id="map-wrap">
-        <img src="/img/2호선/202.png" id="nabu" class="img-fluid" alt="Responsive-image">
+        <img src="/img/138.jpg" id="nabu" class="img-fluid" alt="Responsive-image">
       </div>
     </div>
   </div>
