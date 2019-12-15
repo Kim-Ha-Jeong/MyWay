@@ -62,7 +62,7 @@ img{
     background-color : white;
     width: 30%;
     margin: auto;
-    border : 6px solid #00A4FF;
+    border : 6px solid #FFCE33;
     border-radius : 40px;
     font-size : 1.2rem;
     padding : 1% 0 1% 1%;
@@ -86,7 +86,7 @@ input:focus {
 	display: flex;
 	flex-basis: 100%;
 	align-items: center;
-	color: #00A4FF;
+	color: #FFCE33;
 	font-size: 12px;
 	margin: 8px 0px;
 }
@@ -94,7 +94,7 @@ input:focus {
 #hr-sect::after {
 	content: "";
 	flex-grow: 1;
-	background: #00A4FF;
+	background: #FFCE33;
 	height: 8px;
 	font-size: 0px;
 	line-height: 0px;
@@ -166,7 +166,7 @@ p.like{
 }
 
 #map-wrap{
-    background-color: #F1F5F8;
+    background-color: #F7F6F2;
     margin : 0 1.5%;
     border-radius : 10px;
 }
