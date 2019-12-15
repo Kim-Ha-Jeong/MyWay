@@ -18,6 +18,7 @@
 /* 페이지 공통 */
 body{
     background-color : #F1F5F8;
+    overflow-x : hidden;
 }
 
 img{
