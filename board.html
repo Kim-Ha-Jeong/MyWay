@@ -41,6 +41,7 @@
         <input type="text" name="search" id="input" placeholder="실시간 상황을 검색하세요!">
         <button id="searchbutton" type="button" onclick="buttonsearch()" style="background-color:#eeeeee">검색</button>
         <button type="button" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/insert'">글쓰기</button>
+        <button type="submit" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/board/like'">인기순</button>
       </div>
     </form>
     <% data.reverse().forEach(function (item, index) { %>
@@ -61,11 +62,6 @@
       </div>
     </div>
     <% }); %>
-    <div class="row">
-        <div class="col">
-            <button type="submit" class="btn btn-light" style="float: right" onclick="location.href='/board/like'">인기순</button>
-        </div>
-      </div>
   </div>
 </body>
 </html>

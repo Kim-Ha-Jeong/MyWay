@@ -49,6 +49,10 @@ app.get('/', function (request, response) {
 /* 역검색 */
 app.post('/', function (request, response) {
   var stationName = request.body['stationName'];
+  var len=stationName.length;
+  if(stationName.includes('역')){
+    stationName=stationName.substring(0,len-1);
+  }
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
@@ -360,6 +364,10 @@ app.get('/information', function (request, response) {
 /* 상세보기 전체 검색 */
 app.post('/M:id', function (request, response) {
   var stationName = request.body['stationName'];
+  var len=stationName.length;
+  if(stationName.includes('역')){
+    stationName=stationName.substring(0,len-1);
+  }
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
