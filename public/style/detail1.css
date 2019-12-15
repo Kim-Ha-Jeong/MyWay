@@ -1,0 +1,243 @@
+/* 폰트 적용 */
+@font-face { 
+    font-family: 'Nanum-B'; 
+    src: url('/font/NanumSquareB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-EB'; 
+    src: url('/font/NanumSquareEB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-L'; 
+    src: url('/font/NanumSquareL.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-R'; 
+    src: url('/font/NanumSquareR.ttf'); 
+}
+/* 페이지 공통 */
+body{
+    background-color : white;
+    overflow-x : hidden;
+}
+
+img{
+    width : 100%;
+}
+
+/* 로고 */
+#logo{
+    width : 20%;
+    margin: auto;   
+}
+
+/* 전체 요소 틀 */
+#main-contain{
+    background-color:white;
+    width : 67%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+}
+
+/* searchbutton관련 */
+#searchrow{
+    padding-right: 5%;
+    padding-left: 1%;
+}
+
+#search{
+    width: 100%;
+}
+
+#searchbutton{
+    background-color: white;
+    border: 0px;
+    width: 10%;
+}
+
+/* 검색창 관련 */
+#fakebox{
+    background-color : white;
+    width: 30%;
+    margin: auto;
+    border : 6px solid #00A4FF;
+    border-radius : 40px;
+    font-size : 1.2rem;
+    padding : 1% 0 1% 1%;
+    color : black;
+    overflow : hidden;
+}
+
+input{
+    border : 0px;
+    width : 90%;
+    margin: auto;
+    font-size: 1.15rem;
+    padding-left: 3%;
+}
+
+input:focus {
+    outline:none;
+}
+
+#hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: #00A4FF;
+	font-size: 12px;
+	margin: 8px 0px;
+}
+#hr-sect::before,
+#hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: #00A4FF;
+	height: 5px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+a{
+      padding-left: 3%;
+  
+}
+
+/* 제목 */
+.title{
+    font-size : 1.0rem;
+    color : BLACK;
+    font-family: 'Nanum-B';
+}
+
+
+a{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.8rem;
+    margin : auto;
+}
+
+a:link,a:active,a:hover,a:visited{
+    text-decoration:none;
+    color : rgba(0,0,0,0.5);
+}
+
+/* 실시간 인기 글 */
+.card{
+    margin : 1.5% 4.5%;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+.card-body{
+    padding : 0.8rem;
+}
+
+.card-title{
+    font-size : 0.9rem;
+    margin-bottom:2%;
+    font-family: 'Nanum-B';
+    color : #727171;
+}
+
+.card-text{
+    margin-bottom:2%;
+    font-family: 'Nanum-R';
+    color : #929292;
+}
+
+p{
+    margin: auto;
+    font-size: 0.7rem;
+    margin-bottom: 1%;
+    color : #929292;
+    font-family: 'Nanum-R';
+}
+
+p.like{
+    margin-bottom : 0;
+    text-align : right;
+    font-family: 'Nanum-R';
+    font-weight : bold;
+    color : #727171;
+}
+
+#map-wrap{
+    background-color: #F1F5F8;
+    margin : 0 1.5%;
+    border-radius : 10px;
+}
+
+#nabu{
+    margin : 3%;
+    width : 94%;
+}
+
+#sub-contain{
+    background-color:white;
+    width : 67%;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#Line1{
+    background-color : #0052A4;
+    width : 8%;
+    margin : auto;
+}
+
+#Line2{
+    background-color : #10A643;
+    width : 8%;
+    margin : auto;
+}
+#Line3{
+    background-color : #EA8406;
+    width : 8%;
+    margin : auto;
+}
+#Line4{
+    background-color : #00A8E6;
+    width : 8%;
+    margin : auto;
+}
+#Line5{
+    background-color : #A95094;
+    width : 8%;
+    margin : auto;
+}
+#Line6{
+    background-color : #D08D1A;
+    width : 8%;
+    margin : auto;
+}
+#Line7{
+    background-color : #657931;
+    width : 8%;
+    margin : auto;
+}
+#Line8{
+    background-color : #E74E6D;
+    width : 8%;
+    margin : auto;
+}
+#Line9{
+    background-color : #BE941C;
+    width : 8%;
+    margin : auto;
+}
+#LineB{
+    background-color : #FCD204;
+    width : 8%;
+    margin : auto;
+}
+#LineSB{
+    background-color : #CD2234;
+    width : 8%;
+    margin : auto;
+}
+
