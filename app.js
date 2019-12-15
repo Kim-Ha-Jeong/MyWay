@@ -291,34 +291,6 @@ app.post('/138H', function (request, response) {
   });
 });
 
-/* 수원역 상세보기 */
-app.get('/138', function (request, response) {
-  fs.readFile('suwon.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
-      response.send(ejs.render(data, {
-        data: results
-      }));
-    });
-  });
-});
-
-app.post('/138', function (request, response) {
-  var stationName = request.body['stationName'];
-  db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
-      if (!err) {
-          if (rows[0]!=undefined) {
-              response.redirect("/M"+rows[0]['num']);
-
-          } else {
-              response.send('no data');
-          }
-
-      } else {
-          response.send('error : ' + err);
-      }
-  });
-});
-
 /* 상세보기 첫번째 div 게시판 */
 app.get('/boardS', function (request, response) {
   fs.readFile('boardS.html', 'utf8', function (error, data) {
