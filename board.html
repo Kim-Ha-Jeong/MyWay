@@ -44,9 +44,9 @@
       </div>
 
     <% data.reverse().forEach(function (item, index) { %>
-    <div class="row" id="<%= item.type %>" name='글'>
+    <div class="row" >
       <div class="card" name='like' id=<%= item.love %> >
-        <div class="card-body">
+        <div class="card-body" id="<%= item.type %>" name='글'>
           </br>
           <p>
             <h5 class="card-title" name="title">[<%= item.type %>] <%= item.title %></h5>
@@ -62,5 +62,6 @@
     </div>
     <% }); %>
   </div>
+  
 </body>
 </html>
