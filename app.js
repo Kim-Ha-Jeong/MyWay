@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '111111',
+    password: '1234',
     database: 'MyWay'
   });
   db.connect();
@@ -138,6 +138,10 @@ app.get('/homeLogin', function (request, response) {
 
 app.post('/homeLogin', function (request, response) {
   var stationName = request.body['stationName'];
+  var len=stationName.length;
+  if(stationName.includes('역')){
+    stationName=stationName.substring(0,len-1);
+  }
   db.query('select * from station where 역이름=?',[stationName], function (err, rows, fields) {
       if (!err) {
           if (rows[0]!=undefined) {
