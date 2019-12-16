@@ -106,6 +106,7 @@ a{
   
 }
 
+
 /* 제목 */
 .title{
     font-size : 1.0rem;
@@ -194,7 +195,7 @@ p.like{
 }
 
 .moreshow{
-    font-size:0.85rem;
+    font-size:1rem;
     background-color : none;
     color : #aaaaaa;
     font-family : 'Nanum-R';
@@ -203,6 +204,19 @@ p.like{
     border: none;
     width:100%;
 }
+
+.moreshow2{
+    font-size:1rem;
+    background-color : none;
+    color : #aaaaaa;
+    font-family : 'Nanum-R';
+    background-color: transparent !important;
+    border-color: transparent;
+    border: none;
+    width:25%;
+    padding:0%;
+}
+
 
 button:focus {
     outline: none;

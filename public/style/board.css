@@ -157,7 +157,7 @@ select {
 
 #input{
     background-color : white;
-    width: 56%;
+    width: 50%;
     margin: 2% 0 0 0;
     border : 1px solid #dddddd;
     font-size : 0.9rem;
@@ -170,7 +170,7 @@ select {
 
 #input2{
     background-color : white;
-    width: 76.5%;
+    width: 79.5%;
     margin: 0 0 2% 0;
     border : 1px solid #dddddd;
     font-size : 0.9rem;
