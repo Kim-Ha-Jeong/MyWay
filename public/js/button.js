@@ -5,38 +5,50 @@ function select() {
   var selected=document.getElementById('typeselect');
   selectedValue = selected.options[selected.selectedIndex].text;
   var all=document.getElementsByName('글');
+
   if(selectedValue=="전체"){
     for(var i=0;i<all.length;i++){
+        var parent=all[i].parentNode.parentNode;
         all[i].style.display="block";
+        parent.style.height="100%";
     }
   }
   else if(selectedValue=="잡담"){
     for(var i=0;i<all.length;i++){
+      var parent=all[i].parentNode.parentNode;
       if(all[i].id=="잡담"){
         all[i].style.display="block";
+        parent.style.height="100%";
       }
       else{
         all[i].style.display="none";
+        parent.style.height=0;
       }
     }
   }
   else if(selectedValue=="정보"){
     for(var i=0;i<all.length;i++){
+      var parent=all[i].parentNode.parentNode;
       if(all[i].id=="정보"){
         all[i].style.display="block";
+        parent.style.height="100%";
       }
       else{
         all[i].style.display="none";
+        parent.style.height=0;
       }
     }
   }
   else if(selectedValue=="긴급"){
     for(var i=0;i<all.length;i++){
+      var parent=all[i].parentNode.parentNode;
       if(all[i].id=="긴급"){
         all[i].style.display="block";
+        parent.style.height="100%";
       }
       else{
         all[i].style.display="none";
+        parent.style.height=0;
       }
     }
   }
