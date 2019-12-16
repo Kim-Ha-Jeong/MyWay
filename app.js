@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
@@ -64,7 +64,7 @@ app.post('/', function (request, response) {
               response.redirect("/M"+rows[0]['num']);
 
           } else {
-              response.send('no data');
+              response.redirect("/wrong");
           }
 
       } else {
@@ -106,7 +106,7 @@ app.post('/login', function (request, response) {
               response.redirect('/homeLogin');
 
           } else {
-              response.send('no data');
+              response.redirect("/wrong");
           }
       } else {
           response.send('error : ' + err);
@@ -153,7 +153,7 @@ app.post('/homeLogin', function (request, response) {
               response.redirect("/M"+rows[0]['num']);
 
           } else {
-              response.send('no data');
+              response.redirect("/wrong");
           }
 
       } else {
@@ -208,7 +208,7 @@ app.post('/dropOut', function(request,response,next){
           */
             response.redirect('/')
         } else {
-            response.send('no data');
+          response.redirect("/wrong");
         }
 
     } else {
@@ -831,7 +831,7 @@ app.post('/M:id', function (request, response) {
               response.redirect("/M"+rows[0]['num']);
 
           } else {
-              response.send('no data');
+              response.redirect("/wrong");
           }
 
       } else {
@@ -1071,4 +1071,8 @@ app.get('/ISB:id', function (request, response) {
   });
 });
 
-
+app.get('/wrong', function (request, response) {
+  fs.readFile('wrong.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
