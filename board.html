@@ -29,7 +29,6 @@
     </div>
     <p class="title" style="margin-top:5%;">실시간 지하철 수다</p>
     <p style="margin-bottom:5%;">모든 글은 익명으로 작성됩니다. 바르고 고운 말을 사용해주세요 :)</p>
-    <form>
       <div class="row" id="searchrow" style="font-size:0.9rem;">
         <select name="type" id="typeselect" onchange='select()'>
           <option value="전체">전체</option>
@@ -43,7 +42,6 @@
         <button type="button" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/insert'">글쓰기</button>
         <button type="submit" class="btn btn-light" style="float: right; font-size:0.9rem; margin-left:1%; border-radius : 10px;" onclick="location.href='/board/like'">인기순</button>
       </div>
-    </form>
     <% data.reverse().forEach(function (item, index) { %>
     <div class="row" id="<%= item.type %>" name='글'>
       <div class="card" name='like' id=<%= item.love %> >
