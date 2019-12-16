@@ -64,4 +64,12 @@
   </div>
   
 </body>
+<script>
+  var target = document.getElementsByClassName("content");
+  for(var i=0;i<30;i++){
+    var time = target[i].innerHTML.split('G')[0];
+    console.log(target[i].innerHTML.split('G')[0]);
+    target[i].innerHTML = time;
+  }
+</script>
 </html>
