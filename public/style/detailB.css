@@ -76,6 +76,7 @@ input{
     margin: auto;
     font-size: 1.15rem;
     padding-left: 3%;
+    font-family: 'Nanum-B';
 }
 
 input:focus {

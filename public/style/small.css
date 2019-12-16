@@ -88,7 +88,7 @@ div.tag-wrapper{
 }
 
 #tagInput{
-    font-size : 0.8rem;
+    font-size : 0.85rem;
     width:83%;
 }
 
@@ -96,7 +96,7 @@ div.tag-wrapper{
     margin : 0;
     border-radius:0;
     font-size: 0.85rem;
-    padding: 0;
+    padding: 0%;
     width: 15%;
     color: white;
     font-family: 'Nanum-B';
