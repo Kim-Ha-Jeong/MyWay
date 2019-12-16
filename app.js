@@ -390,7 +390,7 @@ app.get('/boardSSB', function (request, response) {
 /* 상세보기 두번째 div 해시태그 */
 app.get('/hashtag1', function (request, response) {
   fs.readFile('hashtag1.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag1', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -400,7 +400,7 @@ app.get('/hashtag1', function (request, response) {
 
 app.get('/hashtag2', function (request, response) {
   fs.readFile('hashtag2.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag2', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -410,7 +410,7 @@ app.get('/hashtag2', function (request, response) {
 
 app.get('/hashtag3', function (request, response) {
   fs.readFile('hashtag3.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag3', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -420,7 +420,7 @@ app.get('/hashtag3', function (request, response) {
 
 app.get('/hashtag4', function (request, response) {
   fs.readFile('hashtag4.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag4', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -430,7 +430,7 @@ app.get('/hashtag4', function (request, response) {
 
 app.get('/hashtag5', function (request, response) {
   fs.readFile('hashtag5.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag5', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -440,7 +440,7 @@ app.get('/hashtag5', function (request, response) {
 
 app.get('/hashtag6', function (request, response) {
   fs.readFile('hashtag6.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag6', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -450,7 +450,7 @@ app.get('/hashtag6', function (request, response) {
 
 app.get('/hashtag7', function (request, response) {
   fs.readFile('hashtag7.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag7', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -460,7 +460,7 @@ app.get('/hashtag7', function (request, response) {
 
 app.get('/hashtag8', function (request, response) {
   fs.readFile('hashtag8.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag8', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -470,7 +470,7 @@ app.get('/hashtag8', function (request, response) {
 
 app.get('/hashtag9', function (request, response) {
   fs.readFile('hashtag9.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag9', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -480,7 +480,7 @@ app.get('/hashtag9', function (request, response) {
 
 app.get('/hashtagB', function (request, response) {
   fs.readFile('hashtagB.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tagb', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -490,7 +490,7 @@ app.get('/hashtagB', function (request, response) {
 
 app.get('/hashtagSB', function (request, response) {
   fs.readFile('hashtagSB.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tagsb', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -499,8 +499,8 @@ app.get('/hashtagSB', function (request, response) {
 });
 
 app.get('/H1:id', function (request, response) {
-  fs.readFile('hashtag.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+  fs.readFile('hashtag1.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag1', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -510,7 +510,7 @@ app.get('/H1:id', function (request, response) {
 
 app.post('/H1:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag1 (title) VALUES (?)', [
       tagName
   ], function () {
     response.redirect('/M1'+request.params.id+"#");
@@ -519,7 +519,7 @@ app.post('/H1:id', function (request, response) {
 
 app.get('/H2:id', function (request, response) {
   fs.readFile('hashtag2.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag2', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -529,7 +529,7 @@ app.get('/H2:id', function (request, response) {
 
 app.post('/H2:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag2 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M2' + request.params.id + "#");
@@ -538,7 +538,7 @@ app.post('/H2:id', function (request, response) {
 
 app.get('/H3:id', function (request, response) {
   fs.readFile('hashtag3.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag3', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -548,7 +548,7 @@ app.get('/H3:id', function (request, response) {
 
 app.post('/H3:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag3 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M3' + request.params.id + "#");
@@ -557,7 +557,7 @@ app.post('/H3:id', function (request, response) {
 
 app.get('/H4:id', function (request, response) {
   fs.readFile('hashtag4.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag4', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -567,7 +567,7 @@ app.get('/H4:id', function (request, response) {
 
 app.post('/H4:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag4 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M4' + request.params.id + "#");
@@ -576,7 +576,7 @@ app.post('/H4:id', function (request, response) {
 
 app.get('/H5:id', function (request, response) {
   fs.readFile('hashtag5.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag5', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -586,7 +586,7 @@ app.get('/H5:id', function (request, response) {
 
 app.post('/H5:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag5 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M5' + request.params.id + "#");
@@ -595,7 +595,7 @@ app.post('/H5:id', function (request, response) {
 
 app.get('/H6:id', function (request, response) {
   fs.readFile('hashtag6.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag6', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -605,7 +605,7 @@ app.get('/H6:id', function (request, response) {
 
 app.post('/H6:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag6 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M6' + request.params.id + "#");
@@ -614,7 +614,7 @@ app.post('/H6:id', function (request, response) {
 
 app.get('/H7:id', function (request, response) {
   fs.readFile('hashtag7.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag7', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -624,7 +624,7 @@ app.get('/H7:id', function (request, response) {
 
 app.post('/H7:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag7 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M7' + request.params.id + "#");
@@ -633,7 +633,7 @@ app.post('/H7:id', function (request, response) {
 
 app.get('/H8:id', function (request, response) {
   fs.readFile('hashtag8.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag8', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -643,7 +643,7 @@ app.get('/H8:id', function (request, response) {
 
 app.post('/H8:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag8 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M8' + request.params.id + "#");
@@ -652,7 +652,7 @@ app.post('/H8:id', function (request, response) {
 
 app.get('/H9:id', function (request, response) {
   fs.readFile('hashtag9.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tag9', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -662,7 +662,7 @@ app.get('/H9:id', function (request, response) {
 
 app.post('/H9:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tag9 (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/M9' + request.params.id + "#");
@@ -671,7 +671,7 @@ app.post('/H9:id', function (request, response) {
 
 app.get('/HB:id', function (request, response) {
   fs.readFile('hashtagB.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tagb', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -681,7 +681,7 @@ app.get('/HB:id', function (request, response) {
 
 app.post('/HB:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tagb (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/MB' + request.params.id + "#");
@@ -690,7 +690,7 @@ app.post('/HB:id', function (request, response) {
 
 app.get('/HSB:id', function (request, response) {
   fs.readFile('hashtagSB.html', 'utf8', function (error, data) {
-    db.query('SELECT * FROM tag', function (error, results) {
+    db.query('SELECT * FROM tagsb', function (error, results) {
       response.send(ejs.render(data, {
         data: results
       }));
@@ -700,7 +700,7 @@ app.get('/HSB:id', function (request, response) {
 
 app.post('/HSB:id', function (request, response) {
   var tagName = request.body['tagName'];
-  db.query('INSERT INTO tag (title) VALUES (?)', [
+  db.query('INSERT INTO tagsb (title) VALUES (?)', [
     tagName
   ], function () {
     response.redirect('/MSB' + request.params.id + "#");
