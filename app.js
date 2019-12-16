@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '111111',
+    password: '1234',
     database: 'MyWay'
   });
   db.connect();
@@ -282,8 +282,8 @@ app.post('/board', function (request, response) {
 });
   
 /* 상세보기 첫번째 div 게시판 */
-app.get('/boardS', function (request, response) {
-  fs.readFile('boardS.html', 'utf8', function (error, data) {
+app.get('/boardS1', function (request, response) {
+  fs.readFile('boardS1.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM board', function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -291,6 +291,97 @@ app.get('/boardS', function (request, response) {
     });
   });
 });
+app.get('/boardS2', function (request, response) {
+  fs.readFile('boardS2.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS3', function (request, response) {
+  fs.readFile('boardS3.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS4', function (request, response) {
+  fs.readFile('boardS4.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS5', function (request, response) {
+  fs.readFile('boardS5.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS6', function (request, response) {
+  fs.readFile('boardS6.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS7', function (request, response) {
+  fs.readFile('boardS7.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS8', function (request, response) {
+  fs.readFile('boardS8.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS9', function (request, response) {
+  fs.readFile('boardS9.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardSB', function (request, response) {
+  fs.readFile('boardSB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardSSB', function (request, response) {
+  fs.readFile('boardSSB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
 
 /* 상세보기 두번째 div 해시태그 */
 app.get('/hashtag1', function (request, response) {

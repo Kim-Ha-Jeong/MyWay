@@ -39,7 +39,7 @@
   <!--지하철 노선도 외부연결-->
   <script type="text/javascript">
     $(document).ready(function () {
-      $("#board").load("/boardS", function (data) {
+      $("#board").load("/boardSSB", function (data) {
         var page = $(data).contents();
       });
     }); 
@@ -81,11 +81,16 @@
           </form>
         </div>
       </div>
-      <p>자세한 정보가 궁금한 역 이름을 검색하세요</p>
+      <p style="font-size: 0.85rem;">자세한 정보가 궁금한 역 이름을 검색하세요</p>
     </div>
   
 
     <div class="container-fluid" id="main-contain">
+
+      <div class="row">
+        <button id="LineB" class="btn btn-light" onclick="location.href='/MB23'">분당선&nbsp;&nbsp;></button>
+      </div>
+
     <div class="row">
       <div class="col-sm-4 bar" id="board">
       </div>
