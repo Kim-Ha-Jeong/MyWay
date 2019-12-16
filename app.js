@@ -199,21 +199,8 @@ app.get('/dropOut', function (request, response) {
 app.post('/dropOut', function(request,response,next){
   var id = request.body['id'];
   var passwd = request.body['passwd'];
-  db.query('delete from sign where id=? and password=?',[id,passwd], function (err, rows, fields) {
-    if (!err) {
-        if (rows[0]!=undefined) {
-          /*
-            response.send('id : ' + rows[0]['id'] + '<br>' +
-                'pw : ' + rows[0]['password']);
-          */
-            response.redirect('/')
-        } else {
-          response.redirect("/wrong");
-        }
-
-    } else {
-        response.send('error : ' + err);
-    }
+  db.query('delete from sign where id=? and password=?',[id,md5(passwd)], function () {
+      response.redirect('/complete');
   });
 })
 
@@ -1073,6 +1060,12 @@ app.get('/ISB:id', function (request, response) {
 
 app.get('/wrong', function (request, response) {
   fs.readFile('wrong.html', 'utf8', function (error, data) {
+    response.send(data);
+  });
+});
+
+app.get('/complete', function (request, response) {
+  fs.readFile('complete.html', 'utf8', function (error, data) {
     response.send(data);
   });
 });
