@@ -80,10 +80,11 @@ div.tag-wrapper{
 }
 
 #tagbox{
-    border : 2px solid #00A4FF;
+    border : 2px solid #23549B;
     width : 100%;
     margin:auto;
     padding : 0;
+    border-radius : 5px;
 }
 
 #tagInput{
@@ -99,10 +100,12 @@ div.tag-wrapper{
     width: 15%;
     color: white;
     font-family: 'Nanum-B';
+    border-top-right-radius : 2px;
+    border-bottom-right-radius : 2px;
 }
 
 .btn{
-    background-color:#00A4FF;
+    background-color:#23549B;
 }
 
 .card{
@@ -151,7 +154,7 @@ input{
 .btn{
     width : 100%;
     font-size : 0.9rem;
-    background-color : #00A4FF;
+    background-color : #23549B;
     color : white;
     margin-top : 2%;
     border : 7px;
