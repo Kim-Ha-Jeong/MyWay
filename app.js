@@ -704,8 +704,108 @@ app.post('/HSB:id', function (request, response) {
 });
 
     /* 상세보기 세번째 div 역정보 */
-app.get('/information', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+app.get('/information1', function (request, response) {
+  fs.readFile('information1.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information2', function (request, response) {
+  fs.readFile('information2.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information3', function (request, response) {
+  fs.readFile('information3.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information4', function (request, response) {
+  fs.readFile('information4.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information5', function (request, response) {
+  fs.readFile('information5.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information6', function (request, response) {
+  fs.readFile('information6.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information7', function (request, response) {
+  fs.readFile('information7.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information8', function (request, response) {
+  fs.readFile('information8.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/information9', function (request, response) {
+  fs.readFile('information9.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/informationB', function (request, response) {
+  fs.readFile('informationB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/informationSB', function (request, response) {
+  fs.readFile('informationSB.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -748,7 +848,7 @@ app.get('/M1:id', function (request, response) {
 });
 
 app.get('/I1:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('information1.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"1"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -769,7 +869,7 @@ app.get('/I1:id', function (request, response) {
   });
 
   app.get('/I2:id', function (request, response) {
-    fs.readFile('information.html', 'utf8', function (error, data) {
+    fs.readFile('information2.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',"2"+[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
@@ -790,7 +890,7 @@ app.get('/I1:id', function (request, response) {
   });
 
   app.get('/I3:id', function (request, response) {
-    fs.readFile('information.html', 'utf8', function (error, data) {
+    fs.readFile('information3.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',"3"+[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
@@ -811,7 +911,7 @@ app.get('/I1:id', function (request, response) {
   });
 
   app.get('/I4:id', function (request, response) {
-    fs.readFile('information.html', 'utf8', function (error, data) {
+    fs.readFile('information4.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',"4"+[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
@@ -832,7 +932,7 @@ app.get('/I1:id', function (request, response) {
   });
 
   app.get('/I5:id', function (request, response) {
-    fs.readFile('information.html', 'utf8', function (error, data) {
+    fs.readFile('information5.html', 'utf8', function (error, data) {
       db.query('SELECT * FROM station where num=?',"5"+[request.params.id], function (error, results) {
         response.send(ejs.render(data, {
           data: results
@@ -853,7 +953,7 @@ app.get('/M6:id', function (request, response) {
 });
 
 app.get('/I6:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('information6.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"6"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -874,7 +974,7 @@ app.get('/I6:id', function (request, response) {
 });
 
 app.get('/I7:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('information7.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"7"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -895,7 +995,7 @@ app.get('/M8:id', function (request, response) {
 });
 
 app.get('/I8:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('information8.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"8"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -916,7 +1016,7 @@ app.get('/M9:id', function (request, response) {
 });
 
 app.get('/I9:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('information9.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"9"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -937,7 +1037,7 @@ app.get('/MB:id', function (request, response) {
 });
 
 app.get('/IB:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('informationB.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"B"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -958,7 +1058,7 @@ app.get('/MSB:id', function (request, response) {
 });
 
 app.get('/ISB:id', function (request, response) {
-  fs.readFile('information.html', 'utf8', function (error, data) {
+  fs.readFile('informationSB.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where num=?',"SB"+[request.params.id], function (error, results) {
       response.send(ejs.render(data, {
         data: results

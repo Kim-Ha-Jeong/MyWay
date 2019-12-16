@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>공지사항</title>
+    <!-- Font Awesome -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="/style/small.css" type="text/css">
+</head>
+
+<body>
+    <div class="container-fluid" id="Line_B">
+        <div class="row" id="title-row">
+            <h5 class="title">역 정보</h5>
+        </div>
+        <div class="row">
+            <p class="sub-title">역의 기본 정보를 확인하세요!</p>
+        </div>
+
+        <hr style="margin-bottom: 3.5%;">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <img src="/img/s_icon_station.png" id="info-img" class="img-fluid" alt="Responsive-img">
+                                플랫폼: <%= data[0].플랫폼 %>
+                            </p>
+                            <p class="card-text">
+                                <img src="/img/s_icon_door.png" id="info-img" class="img-fluid" alt="Responsive-img">
+                                내리는 문: <%= data[0].내리는문 %>
+                            </p>
+                            <p class="card-text">
+                                <img src="/img/s_icon_toilet.png" id="info-img" class="img-fluid" alt="Responsive-img">
+                                화장실: <%= data[0].화장실 %>
+                            </p>
+                            <p class="card-text">
+                                <img src="/img/s_icon_transfer.png" id="info-img" class="img-fluid" alt="Responsive-img">
+                                반대편 횡단: <%= data[0].반대편횡단 %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        <hr style="margin-bottom:2.5%;">
+    </div>
+    </div>
+</body>
+
+</html>
