@@ -166,6 +166,7 @@ p.like{
 }
 
 #map-wrap{
+    width : 100%;
     background-color: #F4F4F4;
     margin : 0 1.5%;
     border-radius : 10px;
