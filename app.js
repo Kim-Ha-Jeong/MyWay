@@ -282,8 +282,98 @@ app.post('/board', function (request, response) {
 });
   
 /* 상세보기 첫번째 div 게시판 */
-app.get('/boardS', function (request, response) {
-  fs.readFile('boardS.html', 'utf8', function (error, data) {
+app.get('/boardS1', function (request, response) {
+  fs.readFile('boardS1.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS2', function (request, response) {
+  fs.readFile('boardS2.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS3', function (request, response) {
+  fs.readFile('boardS3.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS4', function (request, response) {
+  fs.readFile('boardS4.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS5', function (request, response) {
+  fs.readFile('boardS5.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS6', function (request, response) {
+  fs.readFile('boardS6.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS7', function (request, response) {
+  fs.readFile('boardS7.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS8', function (request, response) {
+  fs.readFile('boardS8.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardS9', function (request, response) {
+  fs.readFile('boardS9.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardSB', function (request, response) {
+  fs.readFile('boardSB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM board', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+app.get('/boardSSB', function (request, response) {
+  fs.readFile('boardSSB.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM board', function (error, results) {
       response.send(ejs.render(data, {
         data: results
@@ -292,8 +382,119 @@ app.get('/boardS', function (request, response) {
   });
 });
 
+
 /* 상세보기 두번째 div 해시태그 */
-app.get('/H:id', function (request, response) {
+app.get('/hashtag1', function (request, response) {
+  fs.readFile('hashtag1.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag2', function (request, response) {
+  fs.readFile('hashtag2.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag3', function (request, response) {
+  fs.readFile('hashtag3.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag4', function (request, response) {
+  fs.readFile('hashtag4.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag5', function (request, response) {
+  fs.readFile('hashtag5.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag6', function (request, response) {
+  fs.readFile('hashtag6.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag7', function (request, response) {
+  fs.readFile('hashtag7.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag8', function (request, response) {
+  fs.readFile('hashtag8.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtag9', function (request, response) {
+  fs.readFile('hashtag9.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtagB', function (request, response) {
+  fs.readFile('hashtagB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/hashtagSB', function (request, response) {
+  fs.readFile('hashtagSB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.get('/H1:id', function (request, response) {
   fs.readFile('hashtag.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM tag', function (error, results) {
       response.send(ejs.render(data, {
@@ -303,16 +504,206 @@ app.get('/H:id', function (request, response) {
   });
 });
 
-app.post('/H:id', function (request, response) {
+app.post('/H1:id', function (request, response) {
   var tagName = request.body['tagName'];
   db.query('INSERT INTO tag (title) VALUES (?)', [
       tagName
   ], function () {
-    response.redirect('/M'+request.params.id+"#");
+    response.redirect('/M1'+request.params.id+"#");
     });
   });
 
-/* 상세보기 세번째 div 역정보 */
+app.get('/H2:id', function (request, response) {
+  fs.readFile('hashtag2.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H2:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M2' + request.params.id + "#");
+  });
+});
+
+app.get('/H3:id', function (request, response) {
+  fs.readFile('hashtag3.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H3:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M3' + request.params.id + "#");
+  });
+});
+
+app.get('/H4:id', function (request, response) {
+  fs.readFile('hashtag4.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H4:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M4' + request.params.id + "#");
+  });
+});
+
+app.get('/H5:id', function (request, response) {
+  fs.readFile('hashtag5.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H5:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M5' + request.params.id + "#");
+  });
+});
+
+app.get('/H6:id', function (request, response) {
+  fs.readFile('hashtag6.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H6:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M6' + request.params.id + "#");
+  });
+});
+
+app.get('/H7:id', function (request, response) {
+  fs.readFile('hashtag7.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H7:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M7' + request.params.id + "#");
+  });
+});
+
+app.get('/H8:id', function (request, response) {
+  fs.readFile('hashtag8.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H8:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M8' + request.params.id + "#");
+  });
+});
+
+app.get('/H9:id', function (request, response) {
+  fs.readFile('hashtag9.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/H9:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/M9' + request.params.id + "#");
+  });
+});
+
+app.get('/HB:id', function (request, response) {
+  fs.readFile('hashtagB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/HB:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/MB' + request.params.id + "#");
+  });
+});
+
+app.get('/HSB:id', function (request, response) {
+  fs.readFile('hashtagSB.html', 'utf8', function (error, data) {
+    db.query('SELECT * FROM tag', function (error, results) {
+      response.send(ejs.render(data, {
+        data: results
+      }));
+    });
+  });
+});
+
+app.post('/HSB:id', function (request, response) {
+  var tagName = request.body['tagName'];
+  db.query('INSERT INTO tag (title) VALUES (?)', [
+    tagName
+  ], function () {
+    response.redirect('/MSB' + request.params.id + "#");
+  });
+});
+
+    /* 상세보기 세번째 div 역정보 */
 app.get('/information', function (request, response) {
   fs.readFile('information.html', 'utf8', function (error, data) {
     db.query('SELECT * FROM station where 역이름="수원" and 선="1"', function (error, results) {

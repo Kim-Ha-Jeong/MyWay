@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>공지사항</title>
+    <!-- Font Awesome -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="/style/small.css" type="text/css">
+</head>
+
+<body>
+    <div class="container-fluid" id="Line_B">
+        <div class="row" id="title-row">
+            <h5 class="title">#후기태그</h5>
+        </div>
+        <div class="row">
+            <p class="sub-title">해시태그로 역 리뷰를 남겨주세요</p>
+        </div>
+        <hr>
+        <div class="tag-wrapper">
+            <% data.reverse() 
+                for(var i = 0; i < 8 ; i++){ %>
+                <div class="tag">#<%= data[i].title %></div>
+                <% } %>
+        </div>
+        <hr>
+        </hr>
+        <div id="tag-wrapper">
+            <form method="post" name="hash" onSubmit="formAction(this)">
+                <div class="row" id="tagbox">
+                    <input id="tagInput" type="text" name="tagName" placeholder="이 역에 대한 나만의 #후기태그를 달아주세요">
+                    <button class="btn btn-light" id="tagButton" type="submit">등록</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    var para = document.location.href.split("M");
+    var target = "/H"+para[1];
+    function formAction(){
+        document.hash.action = target;
+    }
+</script>
+</html>
