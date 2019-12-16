@@ -47,7 +47,7 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-      $("#tag").load("/hashtag", function (data) {
+      $("#tag").load("/hashtag1", function (data) {
         var page = $(data).contents();
       });
     }); 
@@ -75,7 +75,7 @@
           <form method="post">
             <div class="row" id="searchrow">
               <input type="text" name="stationName" style="text-align:center;" placeholder="<%= data[0].역이름 %>역">
-              <button id="searchbutton" type="submit"><img src="/img/searchbutton.png" id="search"
+              <button id="searchbutton" type="submit"><img src="/img/searchbutton_1.png" id="search"
                   alt="Responsive-image" class="img-fluid"></button>
             </div>
           </form>
