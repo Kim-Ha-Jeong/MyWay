@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var db = mysql.createConnection({
     user: 'root',
     port : 3306,
-    password: '1234',
+    password: '111111',
     database: 'MyWay'
   });
   db.connect();
