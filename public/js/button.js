@@ -60,14 +60,18 @@ function buttonsearch(){
   var all=document.getElementsByName('글');
   var getTitle=document.getElementsByName('title');
   var getDesc=document.getElementsByName('desc');
+  
   for(var i=0;i<getTitle.length;i++){
     var title=getTitle[i].innerHTML;
     var desc=getDesc[i].innerHTML;
+    var parent=all[i].parentNode.parentNode;
     if((title.includes(text))||(desc.includes(text))){
       all[i].style.display="block";
+      parent.style.height="100%";
     }
     else{
       all[i].style.display="none";
+      parent.style.height=0;
     }
   }
 }
